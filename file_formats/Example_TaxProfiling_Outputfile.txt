@@ -1,0 +1,21 @@
+# CAMI Submission for Taxonomic Profiling
+@Task:TaxonomicProfiling 
+@Version:1.0
+@ContestantID:CONTESTANTID
+@SampleID:SAMPLEID
+@Ranks: superkingdom|phylum|class|order|family|genus|species|strain
+
+@@TAXID	RANK	TAXPATH	TAXPATH_SN	PERCENTAGE
+2	superkingdom	2	Bacteria	98.81211
+2157	superkingdom	2157	Archaea	1.18789
+1239	phylum	2|1239	Bacteria|Firmicutes	59.75801
+1224	phylum	2|1224	Bacteria|Proteobacteria	18.94674
+28890	phylum	2157|28890	Archaea|Euryarchaeotes	1.18789
+91061	class	2|1239|91061	Bacteria|Firmicutes|Bacilli	59.75801
+28211	class	2|1224|28211	Bacteria|Proteobacteria|Alphaproteobacteria	18.94674
+183925	class	2157|28890|183925	Archaea|Euryarchaeotes|Methanobacteria	1.18789
+1385	order	2|1239|91061|1385	Bacteria|Firmicutes|Bacilli|Bacillales	59.75801
+356	order	2|1224|28211|356	Bacteria|Proteobacteria|Alphaproteobacteria|Rhizobacteria	10.52311
+204455	order	2|1224|28211|204455	Bacteria|Proteobacteria|Alphaproteobacteria|Rhodobacterales	8.42263
+2158	order	2157|28890|183925|2158	Archaea|Euryarchaeotes|Methanobacteria|Methanobacteriales	1.18789
+
