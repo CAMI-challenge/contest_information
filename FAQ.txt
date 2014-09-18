@@ -17,8 +17,8 @@ We use it for video hangouts in planning the CAMI contest because we are working
 
 Why should I participate in the contest?
 There are various reasons why you might want to participate. 
-- First, you might be interested in receiving feedback on your methods result on a larger number of data sets. 
-- Facilitated future benchmarking. By submitting your tool in a docker container, you will be able to continuously monitor its performance against other tools that have been submitted this way. It will be possible to automaticall run all tools on new data sets and include new performance metrics easily. If you update your tool, you simply have to update your docker container that you submitted. 
+- First, you might be interested in receiving feedback on your methods results on a larger number of data sets. 
+- Facilitated future benchmarking. By submitting your tool in a docker container, you will be able to continuously monitor its performance against other tools that have been submitted this way. It will be possible to automatically run all tools on new data sets and include new performance metrics easily. If you update your tool, you simply have to update your docker container that you submitted. 
 - Coauthorship. Contest participants who would like to disclose their results have the option to be authors on a joint CAMI evaluation publication.
 - Other goodies. We are currently inquiring whether we can distribute access to compute time or free sequencing runs to contest participants in the form of a raffle. Sponsors, please contact us!
 
@@ -40,11 +40,11 @@ We will provided simulated metagenome data sets created from unpublished isolate
 Why are we providing new simulated data sets and not using existing public ones?
 For real metagenome samples, we do not know which read comes from which genome, and in our simulations, this should be the same way. All public simulated samples also have the correct solution also available, which would make the contest less realistic. Furthermore, we want to simulate different relevant scenarios that are used in metagenomics for which no simulated data sets exist.
 
-I have problems finding out which output format I should use?
-You can contact us to get advice on this.
+I have problems finding out which output format I should use, what should I do?
+You can contact us to get advice.
 
 How do I submit my results?
-The best way will be if you provide your tool installed in a docker container following our instructions, which writes the output to a specific order in a file with a specific name (instructions found ..). You can upload this docker container to the contest website and we wil rerun your tool to see if the results are entirely reproducible. If your requires standard reference databases to run, many of them will be provided on the website. How you link to these is explained in the instructions.
+The best way will be if you provide your tool installed in a docker container following our instructions, which writes the output to a specific order in a file with a specific name (instructions found ..). You can upload this docker container to the contest website and we will rerun your tool to see if the results are entirely reproducible. If your requires standard reference databases to run, many of them will be provided on the website. How you link to these is explained in the instructions.
 
 If you want to submit your results without the tool, you can do so and get the feedback for your personal information. In this case, your tool will only be considered to be included in a joint result publication, if it is a publicly accessible webtool.
 
