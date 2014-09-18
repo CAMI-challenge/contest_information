@@ -22,7 +22,7 @@ Each mandatory header line begins with the character '@'. If there is just one '
 The following lists an exemplary header section with all defined tags and values. 
 
 # CAMI Submission for Taxonomic Profiling
-@Task:TaxonomicProfiling 
+@Task:Profiling 
 @Version:1.0
 @ContestantID:CONTESTANTID
 @SampleID:SAMPLEID
@@ -48,7 +48,7 @@ For instance:
 #CAMI Submission for Taxonomic Profiling
 This line is a commment line describing the file content.
 
-@Task:TaxonomicProfiling
+@Task:Profiling
 This line defines the type of output found below. 
 
 @version:1.0
@@ -95,7 +95,7 @@ Each output line should match: /^([A-Za-z0-9\|\_\s]\t)+([0-9]{0,3}\.[0-9]+)/
 -----------
 
 # CAMI Submission for Taxonomic Profiling
-@Task:TaxonomicProfiling 
+@Task:Profiling 
 @Version:1.0
 @ContestantID:CONTESTANTID
 @SampleID:SAMPLEID
