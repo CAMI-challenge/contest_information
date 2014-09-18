@@ -1,5 +1,5 @@
 # CAMI Submission for Taxonomic Profiling
-@Task:TaxonomicProfiling 
+@Task:Profiling 
 @Version:1.0
 @ContestantID:CONTESTANTID
 @SampleID:SAMPLEID
