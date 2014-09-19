@@ -1,4 +1,4 @@
-ContestInformation
-==================
+Contest Information
+===================
 
-File format specifications, Presentation materials and other information 
+File format specifications, presentation materials and other information.
