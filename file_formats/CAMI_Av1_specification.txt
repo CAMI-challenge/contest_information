@@ -10,7 +10,7 @@ CAMI stands for Critical Assessment of Metagenome Interpretation.  The CAMI asse
 
 The header section of the FASTA files must follow the standard FASTA guidelines and must start with ">" character followed by any alphanumeric "[A-Za-z]", whitespace (spaces and tabs), brackets "[]", underscores "_", colons "[:;]", commas ",", periods ".", pipes "|",  or hypens "-" ending with a newline character.
 
-There is no required naming convention for contigs and scaffolds and is left up to the discretion of the user.
+Contigs and scaffolds should be written to output files contigs.fna and scaffolds.fna, respectively.
 
 Examples:
 

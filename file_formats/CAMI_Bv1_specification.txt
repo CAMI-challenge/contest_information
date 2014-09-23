@@ -11,6 +11,8 @@ with '@' or '#' for comments, while output lines do not.
 
 Each output line has 2 mandatory fields: The SEQUENCEID and either TAXID or BINID.
 
+Bins should be written to a file named bins.camib
+
 
 
 1.2 The header section
