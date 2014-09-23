@@ -1,7 +1,7 @@
 Frequently Asked Questions
 
 What is a binning method?
-A binning method assigns an identifier to every sequence of a sequence sample. A bin includes all the sequences with the same identifier. If these identifiers identify taxa from a taxonomy, the method is a taxonomic binning method.
+A binning method assigns an identifier to every sequence in a sequence sample, where the total number of identifiers is ideally less than the total number of sequences. Thus the act of binning places the sequences in to broader categories. A bin includes all the sequences with the same identifier. If these identifiers identify taxa from a taxonomy, the method is a taxonomic binning method.
 
 What is a profiling method?
 A profiling method returns an estimate for the frequencies of different taxa in a sequenced microbial community based on analysis of the sequence sample. The main output is a vector with relative abundances for the different sample taxa. The relative abundances of taxa from the same 'rank' of the taxonomy (e.g. superkingdom, including archaea, bacteria and eukaryotes) cannot sum up to more than 1.
