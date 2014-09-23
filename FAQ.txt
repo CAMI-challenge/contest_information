@@ -1,0 +1,63 @@
+Frequently Asked Questions
+
+What is a binning method?
+A binning method assigns an identifier to every sequence of a sequence sample. A bin includes all the sequences with the same identifier. If these identifiers identify taxa from a taxonomy, the method is a taxonomic binning method.
+
+What is a profiling method?
+A profiling method returns an estimate for the frequencies of different taxa in a sequenced microbial community based on analysis of the sequence sample. The main output is a vector with relative abundances for the different sample taxa. The relative abundances of taxa from the same 'rank' of the taxonomy (e.g. superkingdom, including archaea, bacteria and eukaryotes) cannot sum up to more than 1.
+
+What is an assembly method?
+An assembly method returns longer nucleotide sequences derived by puzzling together individual sequencing reads. These sequences are assumed to represent contiguous stretches from one genome included in the microbiome sample that was sequenced.
+
+Where do I find the relevant information when I want to participate in the CAMI contest?
+You can find all information on the CAMI webpage, on the page entitled 'Contest participation'.
+
+What is the purpose of the google+-group? 
+We use it for video hangouts in planning the CAMI contest because we are working with people from around the world. We want to get your feedback and invite tool developers to interact with the CAMI team here in defining the CAMI contest already in the development phase. You do not have to join the group if you want to participate in the contest.
+
+Why should I participate in the contest?
+There are various reasons why you might want to participate. 
+- First, you might be interested in receiving feedback on your methods results on a larger number of data sets. 
+- Facilitated future benchmarking. By submitting your tool in a docker container, you will be able to continuously monitor its performance against other tools that have been submitted this way. It will be possible to automatically run all tools on new data sets and include new performance metrics easily. If you update your tool, you simply have to update your docker container that you submitted. 
+- Coauthorship. Contest participants who would like to disclose their results have the option to be authors on a joint CAMI evaluation publication.
+- Other goodies. We are currently inquiring whether we can distribute access to compute time or free sequencing runs to contest participants in the form of a raffle. Sponsors, please contact us!
+
+When will the contest start?
+The current plan is that it will begin at the end of 2014.
+
+How long will the CAMI contest last?
+CAMI will be open overall for 3 months. First, six weeks for the assembly methods, and methods that process read data sets. After six weeks, a gold standard assembly will be provided for methods that work on assembled data sets.
+
+How large will the data sets be that will be generated?
+This will be around 120 Gbp of sequence overall and 8-9 samples. 
+
+If I do not have access to sufficient compute time on my own, what are my options?
+Please contact us to inquire about compute ressources the Pittburgh Supercomputing Center could provide to you.
+
+What kind of data sets will be provided?
+We will provided simulated metagenome data sets created from unpublished isolate genome sequences, with as much realism built in as we could manage. For instance, they will include multiple strains from the same species. 
+
+Why are we providing new simulated data sets and not using existing public ones?
+For real metagenome samples, we do not know which read comes from which genome, and in our simulations, this should be the same way. All public simulated samples also have the correct solution also available, which would make the contest less realistic. Furthermore, we want to simulate different relevant scenarios that are used in metagenomics for which no simulated data sets exist.
+
+I have problems finding out which output format I should use, what should I do?
+You can contact us to get advice.
+
+How do I submit my results?
+The best way will be if you provide your tool installed in a docker container following our instructions, which writes the output to a specific order in a file with a specific name (instructions found ..). You can upload this docker container to the contest website and we will rerun your tool to see if the results are entirely reproducible. If your requires standard reference databases to run, many of them will be provided on the website. How you link to these is explained in the instructions.
+
+If you want to submit your results without the tool, you can do so and get the feedback for your personal information. In this case, your tool will only be considered to be included in a joint result publication, if it is a publicly accessible webtool.
+
+I cannot get the docker installation to work, what do I do?
+Please contact us, we are happy to help. 
+
+
+
+
+
+
+
+
+
+
+
