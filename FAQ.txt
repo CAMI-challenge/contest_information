@@ -54,14 +54,3 @@ If you want to submit your results without the tool, you can do so and get the f
 
 I cannot get the docker installation to work, what do I do?
 Please contact us, we are happy to help. 
-
-
-
-
-
-
-
-
-
-
-
