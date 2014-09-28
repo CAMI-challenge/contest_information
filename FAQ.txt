@@ -9,6 +9,9 @@ A profiling method returns an estimate for the frequencies of different taxa in 
 What is an assembly method?
 An assembly method returns longer nucleotide sequences derived by puzzling together individual sequencing reads. These sequences are assumed to represent contiguous stretches from one genome included in the microbiome sample that was sequenced.
 
+Is CAMI open and transparent?
+Yes! The development process is done in an open community. Everybody is invited to participate. People who intend to participate will not be involved in any part of the development process that provides any information or advantage for the actual competition.
+
 Where do I find the relevant information when I want to participate in the CAMI contest?
 You can find all information on the CAMI webpage, on the page entitled 'Contest participation'.
 
@@ -35,7 +38,7 @@ If I do not have access to sufficient compute time on my own, what are my option
 Please contact us to inquire about compute ressources the Pittburgh Supercomputing Center could provide to you.
 
 What kind of data sets will be provided?
-We will provided simulated metagenome data sets created from unpublished isolate genome sequences, with as much realism built in as we could manage. For instance, they will include multiple strains from the same species. 
+We will provided simulated metagenome data sets created from published and unpublished (contributed) isolate genome sequences, with as much realism built in as we could manage. For instance, they will include multiple strains from the same species. 
 
 Why are we providing new simulated data sets and not using existing public ones?
 For real metagenome samples, we do not know which read comes from which genome, and in our simulations, this should be the same way. All public simulated samples also have the correct solution also available, which would make the contest less realistic. Furthermore, we want to simulate different relevant scenarios that are used in metagenomics for which no simulated data sets exist.
@@ -46,6 +49,7 @@ You can contact us to get advice.
 How do I submit my results?
 The best way will be if you provide your tool installed in a docker container following our instructions, which writes the output to a specific order in a file with a specific name (instructions found ..). You can upload this docker container to the contest website and we will rerun your tool to see if the results are entirely reproducible. If your requires standard reference databases to run, many of them will be provided on the website. How you link to these is explained in the instructions.
 
+Can I submit the results without providing my tool?
 If you want to submit your results without the tool, you can do so and get the feedback for your personal information. In this case, your tool will only be considered to be included in a joint result publication, if it is a publicly accessible webtool.
 
 I cannot get the docker installation to work, what do I do?
