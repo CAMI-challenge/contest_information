@@ -53,4 +53,10 @@ Can I submit the results without providing my tool?
 If you want to submit your results without the tool, you can do so and get the feedback for your personal information. In this case, your tool will only be considered to be included in a joint result publication, if it is a publicly accessible webtool.
 
 I cannot get the docker installation to work, what do I do?
-Please contact us, we are happy to help. 
+Please contact us, we are happy to help.
+
+Can I use special Hardware for a Dockers container (like GPUs, ...)?
+Yes, all hardware platforms are supported. If you don't have access to the required hardware, please contact us regarding compute resources the Pittburgh Supercomputing Center could provide to you.
+
+How does the speed of a method contribute to the result? Is the contest mainly focused on precision and –recall?
+CAMI will use multiple evaluation metrics for assessing performance. The most suitable ones to represent relevant performance aspects to both users and developers will be determined in a meeting after the contest.
