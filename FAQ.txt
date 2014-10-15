@@ -56,7 +56,7 @@ I cannot get the docker installation to work, what do I do?
 Please contact us, we are happy to help.
 
 Can I use special Hardware for a Dockers container (like GPUs, ...)?
-Yes, all hardware platforms are supported. If you don't have access to the required hardware, please contact us regarding compute resources the Pittburgh Supercomputing Center could provide to you.
+Yes, all hardware platforms are supported. If you don't have access to the required hardware, please contact us regarding compute resources the Pittburgh Supercomputing Center could provide to you. This blog post describes how to run CUDA code in a Docker container: http://stackoverflow.com/questions/25185405/using-gpu-from-a-docker-container
 
 How does the speed of a method contribute to the result? Is the contest mainly focused on precision and –recall?
 CAMI will use multiple evaluation metrics for assessing performance. The most suitable ones to represent relevant performance aspects to both users and developers will be determined in a meeting after the contest.
