@@ -95,7 +95,7 @@ or
 @@SEQUENCEID	TAXID	BINID	SCORE	MYCOLUMN2	MYCOLUMN3
 The last line is always the header for the output section and begins with '@@'. 
 It defines the content of the output columns in a tab-separated format.
-The mandatory tags are described in the output section below. Further optional columns with alphanumeric header tags can be appended to the right..
+The mandatory tags are described in the output section below. Further optional columns with alphanumeric header tags can be appended to the right.
 
 
 
@@ -111,24 +111,26 @@ SEQUENCEID specifies the ID of either a read or a contig sequence
 The TAXID is a taxonomic assignment for your binned sequences 
 (according to the provided taxonomy version from the download 
 site) and will be used for evaluation of your predictions with 
-taxonomy-based  measures. If you create bins that do not include
-taxonomic assignments you do not need to include the TAXID column,
-but only the BINID column, in your output.
-
-
+taxonomy-based  measures.
 
 The BINID entries can be arbitrary alphanumeric identifiers for the bins.
 No taxonomy-based evaluation will be performed using the entries
-in this column. If you create taxonomic bins as output without
+in this column.
+
+There are three different scenarios for binning tools.
+
+
+The first case, example A below: If you create taxonomic bins as output without
 further resolution, you do not need to include the BINID colummn,
-but only the TAXID column, in your output. 
+but only the TAXID column, in your output.
+
+The second case, example B below:
+If you create bins that do not include taxonomic assignments you do not need to include the TAXID column, but only the BINID column, in your output.
 
 
-
-The third case is if you perform taxonomic binning and additionally
+The third case, example C below, is if you perform taxonomic binning and additionally
 resolve bins below existing taxonomic IDs, e.g. to define bins
 representing novel strains. In this case, you add both the TAXID
-field and the BINID field to your output (see example output below).
 It will be easiest to check for consistency for us, if you in this
 case use for the BINID the TAXID entry and a numeric identifier 
 appended (e.g. 562.2).
@@ -142,28 +144,8 @@ the right.
 
 1.5 EXAMPLES
 -----------
+
 1.5.A
-
-#CAMI Format for Binning
-@Task:Binning 
-@Version:1.0
-@ContestantID:CONTESTANTID
-@SampleID:SAMPLEID
-@Referencebased:T
-@Assemblybased:T
-@ReplicateInfo:T
-
-@@SEQUENCEID		TAXID	BINID	
-
-read1201	123	123
-read1202	123	123
-read1203	131564	131564
-read1204	562	562.1
-read1205	562	562.2
-
-
-
-1.5.B
 
 #CAMI Format for Binning
 @Task:Binning 
@@ -184,7 +166,7 @@ read1205	562
 
 
 
-1.5.C
+1.5.B
 	
 #CAMI Format for Binning
 @Task:Binning 
@@ -202,3 +184,23 @@ read1202	ANOTHERBIN
 read1203	BIN6	
 read1204	BIN5	
 read1205	BIN5	
+
+
+1.5.C
+
+#CAMI Format for Binning
+@Task:Binning
+@Version:1.0
+@ContestantID:CONTESTANTID
+@SampleID:SAMPLEID
+@Referencebased:T
+@Assemblybased:T
+@ReplicateInfo:T
+
+@@SEQUENCEID		TAXID	BINID
+
+read1201	123	123
+read1202	123	123
+read1203	131564	131564
+read1204	562	562.1
+read1205	562	562.2
