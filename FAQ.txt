@@ -35,7 +35,7 @@ How large will the data sets be that will be generated?
 This will be around 120 Gbp of sequence overall and 8-9 samples. 
 
 If I do not have access to sufficient compute time on my own, what are my options?
-Please contact us to inquire about compute ressources the Pittburgh Supercomputing Center could provide to you.
+The Pittsburgh Supercomputing Center (PSC) is making compute time and storage available on their SGI UV1000 system, Blacklight to do genome assembly for the CAMI challenge. Blacklight consists of three nodes with 8-16 TB of shared memory and up to 2,048 cores per node. If request these resources during registration, PSC will contact you to determine your software and computing needs and to set up your account on Blacklight.
 
 What kind of data sets will be provided?
 We will provided simulated metagenome data sets created from published and unpublished (contributed) isolate genome sequences, with as much realism built in as we could manage. For instance, they will include multiple strains from the same species. 
