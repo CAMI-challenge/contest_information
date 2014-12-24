@@ -20,13 +20,13 @@ We use it for video hangouts in planning the CAMI contest because we are working
 
 Why should I participate in the contest?
 There are various reasons why you might want to participate. 
-- First, you might be interested in receiving feedback on your methods results on a larger number of data sets. 
+- First, you will receive feedback for your methods performance on a larger number of data sets. 
 - Facilitated future benchmarking. By submitting your tool in a docker container, you will be able to continuously monitor its performance against other tools that have been submitted this way. It will be possible to automatically run all tools on new data sets and include new performance metrics easily. If you update your tool, you simply have to update your docker container that you submitted. 
-- Coauthorship. Contest participants who would like to disclose their results have the option to be authors on a joint CAMI evaluation publication.
-- Other goodies. We are currently inquiring whether we can distribute access to compute time or free sequencing runs to contest participants in the form of a raffle. Sponsors, please contact us!
+- Coauthorship. Contest participants who would like to disclose their identities and deliver reproducible results have the option to be authors on a joint CAMI evaluation publication.
+- We will distribute three participation awards of thousand Euros each among participants submitting reproducible results and performing better than a baseline method across all categories.
 
 When will the contest start?
-The current plan is that it will begin at the end of 2014.
+The current plan is that it will begin at the beginning of 2015.
 
 How long will the CAMI contest last?
 CAMI will be open overall for 3 months. First, six weeks for the assembly methods, and methods that process read data sets. After six weeks, a gold standard assembly will be provided for methods that work on assembled data sets.
@@ -47,10 +47,10 @@ I have problems finding out which output format I should use, what should I do?
 You can contact us to get advice.
 
 How do I submit my results?
-The best way will be if you provide your tool installed in a docker container following our instructions, which writes the output to a specific order in a file with a specific name (instructions found ..). You can upload this docker container to the contest website and we will rerun your tool to see if the results are entirely reproducible. If your requires standard reference databases to run, many of them will be provided on the website. How you link to these is explained in the instructions.
+The best way will be if you provide along with your prediction files your tool installed in a docker container following our instructions, which writes the output to a specific directory in a file with a specific name (instructions will follow). You can upload this docker container to the contest website and we will rerun your tool to see if the results are entirely reproducible. If your requires standard reference databases to run, many of them will be provided on the website. How you link to these is explained in the instructions.
 
 Can I submit the results without providing my tool?
-If you want to submit your results without the tool, you can do so and get the feedback for your personal information. In this case, your tool will only be considered to be included in a joint result publication, if it is a publicly accessible webtool.
+If you want to submit your results without them being reproducible, you can do so and get the feedback for your personal information. In this case, your tool will only be considered to be included in a joint result publication, if it is a publicly accessible webtool.
 
 I cannot get the docker installation to work, what do I do?
 Please contact us, we are happy to help.
