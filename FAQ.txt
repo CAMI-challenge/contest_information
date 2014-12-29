@@ -47,7 +47,8 @@ I have problems finding out which output format I should use, what should I do?
 You can contact us to get advice.
 
 How do I submit my results?
-The best way will be if you provide along with your prediction files your tool installed in a docker container following our instructions, which writes the output to a specific directory in a file with a specific name (instructions will follow). You can upload this docker container to the contest website and we will rerun your tool to see if the results are entirely reproducible. If your requires standard reference databases to run, many of them will be provided on the website. How you link to these is explained in the instructions.
+The best way will be if you provide your tool along with the prediction files. The tool should be installed in a docker container following our instructions on http://cami-challenge.org/participate, which writes the output to a file with a specific name in a specific directory. You can upload this docker container to the contest website and we will rerun your tool to see if the results are entirely reproducible. If your tool requires standard reference databases to run, many of them will be
+provided on the website. How you link to these is explained in the instructions.
 
 Can I submit the results without providing my tool?
 If you want to submit your results without them being reproducible, you can do so and get the feedback for your personal information. In this case, your tool will only be considered to be included in a joint result publication, if it is a publicly accessible webtool.
