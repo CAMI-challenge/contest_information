@@ -77,6 +77,21 @@ You have to do the following steps after the download of a dataset and the execu
 Upload your file with: java -jar camiClient.jar -u credentials_file file_to_upload. You can upload up to 36 hours after the competition end.
 8.(Optional) Register a docker container for reproduceability. We are using the format of nucleotid.es. Please read the description in order to fill out the dockerhubId and proc field.
 
+How to use the cami Client? 
+The java based CAMI client jar is for the validation and upload of assembly, binning and profiling files.
+Requirements are a Unix-like operating system (e.g. Linux, OSX, Solaris, *BSD) and Java 7 (e.g. Oracle JDK 7, OpenJDK 7).
+<br>
+usage: java -jar camiClient.jar [-af <assembly_file>] [-bf <binning_file>] [-h] [-pf <profiling_file>] [-u <credentials_file file_to_upload>] [-version] 
+ Validates and uploads binning, profiling and assembly files.
+ -af,--assemblyFingerprint <assembly_file>       Computes fingerprint of an assembly file.
+ -bf,--binningFingerprint <binning_file>         Computes fingerprint of a binning file.
+ -h,--help                                       Print the help of the application
+ -pf,--profilingFingerprint <profiling_file>     Computes fingerprint of a profiling file.
+ -u,--upload <credentials_file file_to_upload>   You can get the credentials file from the cami
+                                                 website.File to upload is the assembly, binning or
+                                                 profiling file you want to upload.
+ -version,--v                                    Print the version of the application
+
 Where do I get the fingerprint?
 You can get the fingerprint with our cami client jar. Run the cami client: java -jar camiClient.jar with the parameter -af for assembly files -bf for binning files or -pf for profiling files.
 Your files must be in a specific format, which is explained in the following questions.
