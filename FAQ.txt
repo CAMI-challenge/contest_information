@@ -70,7 +70,9 @@ You have to do the following steps after the download of a dataset and the execu
 4.Click the Add Assembly, Add Binning or Add Profiling button.
 5.Fill in the form. For the fingerprint field you have to download our cami client jar(See next step).
 6.Run the cami client: java -jar camiClient.jar with the parameter -fa for assembly files -fb for binning files or -fp for profiling files. Now enter the returned fingerprint in the input field. 
+<br>
 <b>Note!</b> You have to execute the cami client jar and submit the form every time you change the file.
+<br>
 7.After submitting the form you will get a credentials file that allows you to upload the file in the next 36 hours. If you want to submit your file to a later time, just submit the form and you will get new credentials.
 Upload your file with: java -jar camiClient.jar -u credentials_file file_to_upload. You can upload up to 36 hours after the competition end.
 8.(Optional) Register a docker container for reproduceability. We are using the format of nucleotid.es. Please read the description in order to fill out the dockerhubId and proc field.
@@ -78,9 +80,9 @@ Upload your file with: java -jar camiClient.jar -u credentials_file file_to_uplo
 Where do I get the fingerprint?
 You can get the fingerprint with our cami client jar. Run the cami client: java -jar camiClient.jar with the parameter -af for assembly files -bf for binning files or -pf for profiling files.
 Your files must be in a specific format, which is explained in the following questions.
--<b>What is the format of the CAMI assembly file?</b>
--<b>What is the format of the CAMI binning file?</b>
--<b>What is the format of the CAMI profiling file?</b>
+<b>What is the format of the CAMI assembly file?</b>
+<b>What is the format of the CAMI binning file?</b>
+<b>What is the format of the CAMI profiling file?</b>
 Note! You have to execute the cami client jar and submit the form every time you change the file. 
 
 What is the format of the CAMI assembly file?
@@ -99,10 +101,8 @@ ATCTG
 <u>2.The sequence section</u>
 Sequences must contain only capitalized nucleotide characters, including the ambiguous character 'N': /[ATCGN]+/.
 There is no requirement on the number of nucleotides per line, but community best practices advises limiting the amount of nucleotides to 120 characters.
-<br>
 <u>3.Contigs vs. scaffolds</u>
 Contigs must not contain any stretches of greater than 5 ambiguous bases (Ns) in a row. Contigs must be split by the user at these points into smaller contigs. There are no restrictions on the amount of contiguous ambiguous bases in scaffolds. Contigs should be provided in a file called: contigs.fna Scaffolds should be provided in a file called: scaffolds.fna
-<br>
 <u>4.Examples</u>
 >NODE_1331_length_1852_cov_20.7969_ID_2661
 CTATTTTTAAATATCCGCGTACTTACTGAGTTATCGTGGCAGTTTTTGCTAATTTTGCGATTTTTGCCACGATAACTTGT
@@ -114,7 +114,6 @@ GAACAGGAATCCTTTTGGCTGCTGTTGCTTTTTGGGGGTGGCATTCCACACAAGCAACTTCGACAGAAATAACAAATGAA
 What is the format of the CAMI binning file? 
 CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI binning format was specified for this competition and is intended to serve as a standard format for (taxonomic) binning methods. It is a TAB-delimited text format consisting of a header section and an output section. The header must be prior the output. The Header line starts with '@@'.
 Each output line has 2 mandatory fields: The SEQUENCEID and either TAXID or BINID.
-<br>
 <u>1. The header section</u>
 The header begins with '@@' and includes tab-separated column tags, where TAG is a variable string that defines the content and format for the output section. The order of the columns is not important. This line should match: /^\@\@[A-Za-z0-9]+(\t[A-Za-z0-9\_\s]+)+/
 For instance:
@@ -139,7 +138,6 @@ The TAXID is a taxonomic assignment for your binned sequences (according to the 
 The BINID entries can be arbitrary alphanumeric identifiers for the bins. No taxonomy-based evaluation will be performed using the entries in this column. If you create taxonomic bins as output without further resolution, you do not need to include the BINID colummn, but only the TAXID column, in your output.
 The third case is if you perform taxonomic binning and additionally resolve bins below existing taxonomic IDs, e.g. to define bins representing novel strains. In this case, you add both the TAXID field and the BINID field to your output (see example output below). It will be easiest to check for consistency for us, if you in this case use for the BINID the TAXID entry and a numeric identifier appended (e.g. 562.2).
 Further columns with additional information can be appended to the right.
-<br>
 <u>3. Examples</u>
 A
 @@SEQUENCEID  TAXID	BINID
@@ -171,13 +169,11 @@ What is the format of the CAMI profiling file?
 CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI taxonomic profiling format was specified for this contest and is intended to serve as a standard format for taxonomic profiling methods. It is a TAB-delimited text format consisting of a header section and an output section.
 The header must be prior the output. The Header line starts with '@@'.
 Each output line has 4 mandatory fields: The TAXID, the RANK, TAXPATH and the PERCENTAGE. Further optional columns can be appended to the right.
-<br>
 <u>1. The header section</u>
 The header line begins with '@@' and includes tab-separated column tags, where TAG is a variable string that defines the content and format for the output section.
 The order of the columns should match: TAXID RANK TAXPATH PERCENTAGE This line should also match: /^\@\@[A-Za-z]+(\t[A-Za-z]+)+/
 For instance:
 @@TAXID	RANK	TAXPATH	PERCENTAGE
-<br>
 <u>2. The Output section</u>
 The TAXID specifies a unique alphanumeric ID for a node in a reference tree such as the NCBI taxonomy. This will be used for evaluation of your predictions with taxonomy-based measures. If you resolve to bins below existing taxonomic IDs in your reference tree, e.g. to resolve novel strains, you can append a numeric identifier to your classification, e.g. 5232.1(according to the provided taxonomy version from the download site).
 RANK includes alphanumeric identifiers that define ranks in the reference taxonomy at which the respective taxon is located. The used ranks in the NCBI taxonomy and in the CAMI contest are: superkingdom phylum class order family genus species strain.
@@ -199,10 +195,6 @@ Further fields with additional information can be appended to the right. Each ou
 2157	superkingdom	2157	Archaea	1.18789
 1239	phylum	2|1239	Bacteria|Firmicutes	59.75801
 1224	phylum	2|1224	Bacteria|Proteobacteria	18.94674
-
-                    
-
-
 
 I cannot get the docker installation to work, what do I do?
 Please contact us, we are happy to help.
