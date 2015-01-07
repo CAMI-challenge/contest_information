@@ -82,20 +82,41 @@ The java based CAMI client jar is for the validation and upload of assembly, bin
 Requirements are a Unix-like operating system (e.g. Linux, OSX, Solaris, *BSD) and Java 7 (e.g. Oracle JDK 7, OpenJDK 7).
 usage: java -jar camiClient.jar [-af <assembly_file>] [-bf <binning_file>] [-h] [-pf <profiling_file>] [-u <credentials_file file_to_upload>] [-version] 
  Validates and uploads binning, profiling and assembly files.
- -af,--assemblyFingerprint <assembly_file>       
-  Computes fingerprint of an assembly file.
- -bf,--binningFingerprint <binning_file>          
-  Computes fingerprint of a binning file.
- -h,--help                                      
-  Print the help of the application
- -pf,--profilingFingerprint <profiling_file>     
-  Computes fingerprint of a profiling file.
- -u,--upload <credentials_file file_to_upload>   
-  You can get the credentials file from the cami website. 
-  File to upload is the assembly, binning or
-  profiling file you want to upload.
- -version,--v                                    
-  Print the version of the application
+ 
+ <table border="1">
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-af,--assemblyFingerprint <assembly_file></td>
+      <td>Computes fingerprint of an assembly file.</td>
+    </tr>
+    <tr>
+      <td>-bf,--binningFingerprint <binning_file></td>
+      <td>Computes fingerprint of a binning file.</td>
+    </tr>
+    <tr>
+      <td>-pf,--profilingFingerprint <profiling_file></td>
+      <td>Computes fingerprint of a profiling file.</td>
+    </tr>
+    <tr>
+      <td>-u,--upload <credentials_file file_to_upload></td>
+      <td>You can get the credentials file from the cami website. File to upload is the assembly, binning or profiling file you want to upload.</td>
+    </tr>
+    <tr>
+      <td>-h,--help</td>
+      <td>Print the help of the application.</td>
+    </tr>
+    <tr>
+      <td>-version,--v</td>
+      <td>Print the version of the application.</td>
+    </tr>
+  </tbody>
+</table>
 
 Where do I get the fingerprint?
 You can get the fingerprint with our <a href="https://data.cami-challenge.org/participantCamiClient">cami client jar</a>. Run the cami client: java -jar camiClient.jar with the parameter -af for assembly files -bf for binning files or -pf for profiling files.
