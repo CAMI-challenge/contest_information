@@ -51,7 +51,7 @@ You have to do the following steps.
 1.Login or Register
 2.Go to the Up- and Download section.
 3.Find the dataset you want to download.
-4.If you want to download datasets from the restricted download section, you will have to read and accept the terms and conditions. After accepting the terms you are allowed to download the samples. If you want to download a dataset from the public download section, you can click on the "public downloadsection" button and download any sample you want.
+4.If you want to download datasets from the restricted download section, you will have to read and accept the terms and conditions. After accepting the terms you are allowed to download the samples. If you want to download a dataset from the public download section, you can click on the "public download section" button and download any sample you want.
 
 
 I have problems finding out which output format I should use, what should I do?
@@ -73,7 +73,7 @@ You have to do the following steps after the download of a dataset and the execu
 6.Run the cami client: java -jar camiClient.jar with the parameter -fa for assembly files -fb for binning files or -fp for profiling files. Now enter the returned fingerprint in the input field. 
 Note! You have to execute the cami client jar and submit the form every time you change the file.
 7.After submitting the form you will get a credentials file that allows you to upload the file in the next 36 hours. If you want to submit your file to a later time, just submit the form and you will get new credentials.
-  Upload your file with: java -jar camiClient.jar -u credentials_file file_to_upload. You can upload up to 36 hours after the competition end.
+Upload your file with: java -jar camiClient.jar -u credentials_file file_to_upload. You can upload up to 36 hours after the competition end.
 8.(Optional) Register a docker container for reproduceability. We are using the format of nucleotid.es. Please read the description in order to fill out the dockerhubId and proc field.
 
 I cannot get the docker installation to work, what do I do?
