@@ -25,6 +25,9 @@ There are various reasons why you might want to participate.
 - Coauthorship. Contest participants who would like to disclose their identities and deliver reproducible results have the option to be authors on a joint CAMI evaluation publication.
 - We will distribute three participation awards of thousand Euros each among participants submitting reproducible results and performing better than a baseline method across all categories.
 
+Why do I have to register?
+If there is a problem with the submitted files, we have the chance to contact the contestant. In a later stage of the competition we want to show evaluation metrics with an anonymized name for the results (assembly, profiling, binning) provided by the contestant. Participants can choose to have their results displayed anonymously only, or reveal their identities for participation in a joint publication. 
+
 When will the contest start?
 The current plan is that it will begin at the beginning of 2015.
 
