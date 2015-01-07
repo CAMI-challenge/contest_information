@@ -53,7 +53,6 @@ You have to do the following steps.
 3.Find the dataset you want to download.
 4.If you want to download datasets from the restricted download section, you will have to read and accept the terms and conditions. After accepting the terms you are allowed to download the samples. If you want to download a dataset from the public download section, you can click on the "public download section" button and download any sample you want.
 
-
 I have problems finding out which output format I should use, what should I do?
 You can contact us to get advice.
 
@@ -71,7 +70,7 @@ You have to do the following steps after the download of a dataset and the execu
 4.Click the Add Assembly, Add Binning or Add Profiling button.
 5.Fill in the form. For the fingerprint field you have to download our cami client jar(See next step).
 6.Run the cami client: java -jar camiClient.jar with the parameter -fa for assembly files -fb for binning files or -fp for profiling files. Now enter the returned fingerprint in the input field. 
-Note! You have to execute the cami client jar and submit the form every time you change the file.
+<b>Note!</b> You have to execute the cami client jar and submit the form every time you change the file.
 7.After submitting the form you will get a credentials file that allows you to upload the file in the next 36 hours. If you want to submit your file to a later time, just submit the form and you will get new credentials.
 Upload your file with: java -jar camiClient.jar -u credentials_file file_to_upload. You can upload up to 36 hours after the competition end.
 8.(Optional) Register a docker container for reproduceability. We are using the format of nucleotid.es. Please read the description in order to fill out the dockerhubId and proc field.
@@ -79,15 +78,16 @@ Upload your file with: java -jar camiClient.jar -u credentials_file file_to_uplo
 Where do I get the fingerprint?
 You can get the fingerprint with our cami client jar. Run the cami client: java -jar camiClient.jar with the parameter -af for assembly files -bf for binning files or -pf for profiling files.
 Your files must be in a specific format, which is explained in the following questions.
--What is the format of the CAMI assembly file?
--What is the format of the CAMI binning file?
--What is the format of the CAMI profiling file?
+-<b>What is the format of the CAMI assembly file?</b>
+-<b>What is the format of the CAMI binning file?</b>
+-<b>What is the format of the CAMI profiling file?</b>
 Note! You have to execute the cami client jar and submit the form every time you change the file. 
 
 What is the format of the CAMI assembly file?
 The CAMI assembly format is a FASTA-formatted contig and scaffold file.
-1.The header section
+<u>1.The header section</u>
 The header section of the FASTA files must follow the standard FASTA guidelines and must start with ">" character followed by any alphanumeric "[A-Za-z]", whitespace (spaces and tabs), brackets "[]", underscores "_", colons "[:;]", commas ",", periods ".", pipes "|", or hypens "-" ending with a newline character.
+<br>
 Examples:
 >gi|5524211|gb|AAD44166.1| cytochrome b [Elephas maximus maximus]
 ATCTG
@@ -95,12 +95,15 @@ ATCTG
 ATCTG
 >Contig 2, Node 1
 ATCTG
-2.The sequence section
+<br>
+<u>2.The sequence section</u>
 Sequences must contain only capitalized nucleotide characters, including the ambiguous character 'N': /[ATCGN]+/.
 There is no requirement on the number of nucleotides per line, but community best practices advises limiting the amount of nucleotides to 120 characters.
-3.Contigs vs. scaffolds
+<br>
+<u>3.Contigs vs. scaffolds</u>
 Contigs must not contain any stretches of greater than 5 ambiguous bases (Ns) in a row. Contigs must be split by the user at these points into smaller contigs. There are no restrictions on the amount of contiguous ambiguous bases in scaffolds. Contigs should be provided in a file called: contigs.fna Scaffolds should be provided in a file called: scaffolds.fna
-4.Examples
+<br>
+<u>4.Examples</u>
 >NODE_1331_length_1852_cov_20.7969_ID_2661
 CTATTTTTAAATATCCGCGTACTTACTGAGTTATCGTGGCAGTTTTTGCTAATTTTGCGATTTTTGCCACGATAACTTGT
 TAAAAAATATGACGTCTGCAATTCTTGTTGCTTTTACACTACAAAAAAGATAAAATATTAGTATGAAAGCAACAGAAGTG
@@ -111,14 +114,16 @@ GAACAGGAATCCTTTTGGCTGCTGTTGCTTTTTGGGGGTGGCATTCCACACAAGCAACTTCGACAGAAATAACAAATGAA
 What is the format of the CAMI binning file? 
 CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI binning format was specified for this competition and is intended to serve as a standard format for (taxonomic) binning methods. It is a TAB-delimited text format consisting of a header section and an output section. The header must be prior the output. The Header line starts with '@@'.
 Each output line has 2 mandatory fields: The SEQUENCEID and either TAXID or BINID.
-1. The header section
+<br>
+<u>1. The header section</u>
 The header begins with '@@' and includes tab-separated column tags, where TAG is a variable string that defines the content and format for the output section. The order of the columns is not important. This line should match: /^\@\@[A-Za-z0-9]+(\t[A-Za-z0-9\_\s]+)+/
 For instance:
 The following lists all defined tags.
-  SEQUENCEID
-  BINID
+  <b>SEQUENCEID</b>
+  <b>BINID</b>
   <b>TAXID</b>
 Further optional columns can be appended to the right.
+<br>
 Example:
 @@SEQUENCEID TAXID
 or
@@ -127,35 +132,40 @@ or
 @@SEQUENCEID TAXID BINID
 or
 @@SEQUENCEID TAXID BINID SCORE MYCOLUMN2 MYCOLUMN3
-2. The Output section
+<br>
+<u>2. The Output section</u>
 Each output line should match: /^[A-Za-z0-9]+(\t[A-Za-z0-9]+(\.[0-9]+)?)+/ SEQUENCEID specifies the ID of either a read or a contig sequence (depending on the sample).
 The TAXID is a taxonomic assignment for your binned sequences (according to the provided taxonomy version from the download site) and will be used for evaluation of your predictions with taxonomy-based measures. If you create bins that do not include taxonomic assignments you do not need to include the TAXID column, but only the BINID column, in your output.
 The BINID entries can be arbitrary alphanumeric identifiers for the bins. No taxonomy-based evaluation will be performed using the entries in this column. If you create taxonomic bins as output without further resolution, you do not need to include the BINID colummn, but only the TAXID column, in your output.
 The third case is if you perform taxonomic binning and additionally resolve bins below existing taxonomic IDs, e.g. to define bins representing novel strains. In this case, you add both the TAXID field and the BINID field to your output (see example output below). It will be easiest to check for consistency for us, if you in this case use for the BINID the TAXID entry and a numeric identifier appended (e.g. 562.2).
 Further columns with additional information can be appended to the right.
-3. Examples
+<br>
+<u>3. Examples</u>
 A
 @@SEQUENCEID  TAXID	BINID
+<br>
 read1201	123	123
 read1202	123	123
 read1203	131564	131564
 read1204	562	562.1
 read1205	562	562.2
+<br>
 B
 @@SEQUENCEID	TAXID
+<br>
 read1201	123
 read1202	123
 read1203	131564
 read1204	562
 read1205	562
+<br>
 C
 @@SEQUENCEID	BINID
+<br>
 read1201	12346BIN
 read1202	ANOTHERBIN
 read1203	BIN6
 read1204	BIN5
-
-
 
 I cannot get the docker installation to work, what do I do?
 Please contact us, we are happy to help.
