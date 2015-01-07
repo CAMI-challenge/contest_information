@@ -76,6 +76,14 @@ Note! You have to execute the cami client jar and submit the form every time you
 Upload your file with: java -jar camiClient.jar -u credentials_file file_to_upload. You can upload up to 36 hours after the competition end.
 8.(Optional) Register a docker container for reproduceability. We are using the format of nucleotid.es. Please read the description in order to fill out the dockerhubId and proc field.
 
+Where do I get the fingerprint?
+You can get the fingerprint with our cami client jar. Run the cami client: java -jar camiClient.jar with the parameter -af for assembly files -bf for binning files or -pf for profiling files.
+Your files must be in a specific format, which is explained in the following questions.
+-What is the format of the CAMI assembly file?
+-What is the format of the CAMI binning file?
+-What is the format of the CAMI profiling file?
+Note! You have to execute the cami client jar and submit the form every time you change the file. 
+
 I cannot get the docker installation to work, what do I do?
 Please contact us, we are happy to help.
 
