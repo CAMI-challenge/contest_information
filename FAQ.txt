@@ -48,8 +48,8 @@ For real metagenome samples, we do not know which read comes from which genome, 
 
 How can I download data? 
 You have to do the following steps.
-1.Login or Register
-2.Go to the Up- and Download section.
+1.<a href="https://data.cami-challenge.org/accountLoginView">Login</a> or <a href="https://data.cami-challenge.org/accountRegisterView">Register</a>
+2.Go to the <a href="https://data.cami-challenge.org/participate">Up- and Download</a> section.
 3.Find the dataset you want to download.
 4.If you want to download datasets from the restricted download section, you will have to read and accept the terms and conditions. After accepting the terms you are allowed to download the samples. If you want to download a dataset from the public download section, you can click on the "public download section" button and download any sample you want.
 
