@@ -83,14 +83,20 @@ Requirements are a Unix-like operating system (e.g. Linux, OSX, Solaris, *BSD) a
 <br>
 usage: java -jar camiClient.jar [-af <assembly_file>] [-bf <binning_file>] [-h] [-pf <profiling_file>] [-u <credentials_file file_to_upload>] [-version] 
  Validates and uploads binning, profiling and assembly files.
- -af,--assemblyFingerprint <assembly_file>       Computes fingerprint of an assembly file.
- -bf,--binningFingerprint <binning_file>         Computes fingerprint of a binning file.
- -h,--help                                       Print the help of the application
- -pf,--profilingFingerprint <profiling_file>     Computes fingerprint of a profiling file.
- -u,--upload <credentials_file file_to_upload>   You can get the credentials file from the cami
-                                                 website.File to upload is the assembly, binning or
-                                                 profiling file you want to upload.
- -version,--v                                    Print the version of the application
+ -af,--assemblyFingerprint <assembly_file>       
+  Computes fingerprint of an assembly file.
+ -bf,--binningFingerprint <binning_file>          
+  Computes fingerprint of a binning file.
+ -h,--help                                      
+  Print the help of the application
+ -pf,--profilingFingerprint <profiling_file>     
+  Computes fingerprint of a profiling file.
+ -u,--upload <credentials_file file_to_upload>   
+  You can get the credentials file from the cami website. 
+  File to upload is the assembly, binning or
+  profiling file you want to upload.
+ -version,--v                                    
+  Print the version of the application
 
 Where do I get the fingerprint?
 You can get the fingerprint with our cami client jar. Run the cami client: java -jar camiClient.jar with the parameter -af for assembly files -bf for binning files or -pf for profiling files.
@@ -98,7 +104,8 @@ Your files must be in a specific format, which is explained in the following que
 <b>What is the format of the CAMI assembly file?</b>
 <b>What is the format of the CAMI binning file?</b>
 <b>What is the format of the CAMI profiling file?</b>
-Note! You have to execute the cami client jar and submit the form every time you change the file. 
+<br>
+<b>Note!</b> You have to execute the cami client jar and submit the form every time you change the file. 
 
 What is the format of the CAMI assembly file?
 The CAMI assembly format is a FASTA-formatted contig and scaffold file.
@@ -156,7 +163,6 @@ Further columns with additional information can be appended to the right.
 <u>3. Examples</u>
 A
 @@SEQUENCEID  TAXID	BINID
-<br>
 read1201	123	123
 read1202	123	123
 read1203	131564	131564
@@ -165,7 +171,6 @@ read1205	562	562.2
 <br>
 B
 @@SEQUENCEID	TAXID
-<br>
 read1201	123
 read1202	123
 read1203	131564
@@ -174,7 +179,6 @@ read1205	562
 <br>
 C
 @@SEQUENCEID	BINID
-<br>
 read1201	12346BIN
 read1202	ANOTHERBIN
 read1203	BIN6
