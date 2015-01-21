@@ -92,23 +92,23 @@ usage: java -jar camiClient.jar [-af <assembly_file>] [-bf <binning_file>] [-h] 
   </thead>
   <tbody>
     <tr>
-      <td>-af,--assemblyFingerprint <assembly_file></td>
+      <td>-af,--assemblyFingerprint assembly_file</td>
       <td>Computes fingerprint of an assembly file.</td>
     </tr>
     <tr>
-      <td>-bf,--binningFingerprint <binning_file></td>
+      <td>-bf,--binningFingerprint binning_file</td>
       <td>Computes fingerprint of a binning file.</td>
     </tr>
     <tr>
-      <td>-pf,--profilingFingerprint <profiling_file extracted_taxnomy_db_path></td>
+      <td>-pf,--profilingFingerprint profiling_file extracted_taxnomy_db_path</td>
       <td>Validates profiling file and computes fingerprint.(download the taxonomy_db from https://data.cami-challenge.org/participate (databases section))</td>
     </tr>
     <tr>
-      <td>-u,--upload <credentials_file file_to_upload></td>
+      <td>-u,--upload credentials_file file_to_upload </td>
       <td>You can get the credentials file from the cami website. File to upload is the assembly, binning or profiling file you want to upload.</td>
     </tr>
     <tr>
-      <td> -d,--download <url destintation></td>
+      <td> -d,--download url destintation</td>
       <td> Downloads data from S3. </td>
     </tr>
     <tr>
