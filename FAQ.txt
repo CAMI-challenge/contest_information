@@ -108,6 +108,14 @@ usage: java -jar camiClient.jar [-af <assembly_file>] [-bf <binning_file>] [-h] 
       <td>You can get the credentials file from the cami website. File to upload is the assembly, binning or profiling file you want to upload.</td>
     </tr>
     <tr>
+      <td> -d,--download <url destintation></td>
+      <td> Downloads data from S3. </td>
+    </tr>
+    <tr>
+      <td> -r,--recursive </td>
+      <td>Enables recursive directory download from S3 (just with -d/--download).</td>
+    </tr>
+    <tr>
       <td>-h,--help</td>
       <td>Print the help of the application.</td>
     </tr>
