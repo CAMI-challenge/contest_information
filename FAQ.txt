@@ -80,7 +80,7 @@ Upload your file with: java -jar camiClient.jar -u credentials_file file_to_uplo
 How to use the cami Client? 
 The java based CAMI client jar is for the validation and upload of assembly, binning and profiling files.
 Requirements are a Unix-like operating system (e.g. Linux, OSX, Solaris, *BSD) and Java 7 (e.g. Oracle JDK 7, OpenJDK 7).
-usage: java -jar camiClient.jar [-af <assembly_file>] [-bf <binning_file>] [-h] [-pf <profiling_file extracted_taxnomy_db_path>] [-u <credentials_file file_to_upload>] [-version] 
+usage: java -jar camiClient.jar [-af <assembly_file>] [-bf <binning_file extracted_taxnomy_db_path>] [-d <url destination>] [-h] [-pf <profiling_file extracted_taxnomy_db_path>] [-u <credentials_file file_to_upload>] [-version] 
  Validates and uploads binning, profiling and assembly files.
  
  <table border="1">
