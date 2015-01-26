@@ -161,7 +161,7 @@ What is the format of the CAMI binning file?
 The CAMI format for binning is the <a href="https://github.com/SIBCI/rfc/blob/release/v0.8/binning_spec.mkd#the-binning-output-format">SICBI binning</a> format. 
 
 What is the format of the CAMI profiling file? 
-The CAMI format for profiling is the <a href="https://github.com/SIBCI/rfc/blob/release/v0.8/binning_spec.mkd#the-profiling-output-format">SICBI binning</a> format. 
+The CAMI format for profiling is the <a href="https://github.com/SIBCI/rfc/blob/release/v0.8/profiling_spec.mkd#the-profiling-output-format">SICBI profiling</a> format. 
 You get the sample ID for every sample of a dataset when you do the following steps:
 1. <a href="https://data.cami-challenge.org/accountLoginView">Login</a>
 2. Go to to <a href="https://data.cami-challenge.org/participate">Up- and Download</a> section.
