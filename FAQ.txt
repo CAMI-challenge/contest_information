@@ -168,7 +168,7 @@ You get the sample ID for every sample of a dataset when you do the following st
 3. Open restricted or public download section.
 4. No you find for every sample a specific id.
 <strong>Note! </strong> If you want to submit for a dataset, you can just concatenate the profiling files.<br>
-<strong>Note! </strong> If you there is no sample entry for the dataset, you can enter anything in the sampleId tag.
+<strong>Note! </strong> If there is no sample entry for the dataset, you can enter anything in the sampleId tag.
 
 I cannot get the docker installation to work, what should I do?
 Please contact us, we are happy to help.
