@@ -75,7 +75,7 @@ You have to do the following steps after the download of a dataset and the execu
 <br>
 7.After submitting the form you will get a credentials file that allows you to upload the file in the next 36 hours. If you want to submit your file to a later time, just submit the form and you will get new credentials.
 Upload your file with: java -jar camiClient.jar -u credentials_file file_to_upload. You can upload up to 36 hours after the competition end.
-8.(Optional) Register a docker container for reproduceability. We are using the format of nucleotid.es. Please read the description in order to fill out the dockerhubId and proc field.
+8.(Optional) Register a docker container for reproduceability. <a href="https://data.cami-challenge.org/#dockerInfo">How to build/submit a docker container?</a> 
 
 How to use the cami Client? 
 The java based CAMI client jar is for the validation and upload of assembly, binning and profiling files.
@@ -96,8 +96,8 @@ usage: java -jar camiClient.jar [-af <assembly_file>] [-bf <binning_file>] [-h] 
       <td>Computes fingerprint of an assembly file.</td>
     </tr>
     <tr>
-      <td>-bf,--binningFingerprint binning_file</td>
-      <td>Computes fingerprint of a binning file.</td>
+      <td>-bf,--binningFingerprint binning_file extracted_taxnomy_db_path</td>
+      <td>Validates binning file and computes fingerprint.(download the taxonomy_db from https://data.cami-challenge.org/participate (databases section))</td>
     </tr>
     <tr>
       <td>-pf,--profilingFingerprint profiling_file extracted_taxnomy_db_path</td>
@@ -110,10 +110,6 @@ usage: java -jar camiClient.jar [-af <assembly_file>] [-bf <binning_file>] [-h] 
     <tr>
       <td> -d,--download url destintation</td>
       <td> Downloads data from S3. </td>
-    </tr>
-    <tr>
-      <td> -r,--recursive </td>
-      <td>Enables recursive directory download from S3 (just with -d/--download).</td>
     </tr>
     <tr>
       <td>-h,--help</td>
