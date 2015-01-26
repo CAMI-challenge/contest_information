@@ -158,85 +158,16 @@ AAAATAGACGCACAAGCTGGCACATCACAACGAATAACCAAGCATAGAAATGAAGAAAAAGAAAATAATCATGGGAGTAG
 GAACAGGAATCCTTTTGGCTGCTGTTGCTTTTTGGGGGTGGCATTCCACACAAGCAACTTCGACAGAAATAACAAATGAA
 
 What is the format of the CAMI binning file? 
-CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI binning format was specified for this competition and is intended to serve as a standard format for (taxonomic) binning methods. It is a TAB-delimited text format consisting of a header section and an output section. The header must be prior the output. The Header line starts with '@@'.
-Each output line has 2 mandatory fields: The SEQUENCEID and either TAXID or BINID.
-<u>1. The header section</u>
-The header begins with '@@' and includes tab-separated column tags, where TAG is a variable string that defines the content and format for the output section. The order of the columns is not important. This line should match: /^\@\@[A-Za-z0-9]+(\t[A-Za-z0-9\_\s]+)+/
-For instance:
-The following lists all defined tags.
-  <b>SEQUENCEID</b>
-  <b>BINID</b>
-  <b>TAXID</b>
-Further optional columns can be appended to the right.
-<br>
-Example:
-@@SEQUENCEID TAXID
-or
-@@SEQUENCEID BINID
-or
-@@SEQUENCEID TAXID BINID
-or
-@@SEQUENCEID TAXID BINID SCORE MYCOLUMN2 MYCOLUMN3
-<br>
-<u>2. The Output section</u>
-Each output line should match: /^[A-Za-z0-9]+(\t[A-Za-z0-9]+(\.[0-9]+)?)+/ SEQUENCEID specifies the ID of either a read or a contig sequence (depending on the sample).
-The TAXID is a taxonomic assignment for your binned sequences (according to the provided taxonomy version from the download site) and will be used for evaluation of your predictions with taxonomy-based measures. If you create bins that do not include taxonomic assignments you do not need to include the TAXID column, but only the BINID column, in your output.
-The BINID entries can be arbitrary alphanumeric identifiers for the bins. No taxonomy-based evaluation will be performed using the entries in this column. If you create taxonomic bins as output without further resolution, you do not need to include the BINID colummn, but only the TAXID column, in your output.
-The third case is if you perform taxonomic binning and additionally resolve bins below existing taxonomic IDs, e.g. to define bins representing novel strains. In this case, you add both the TAXID field and the BINID field to your output (see example output below). It will be easiest to check for consistency for us, if you in this case use for the BINID the TAXID entry and a numeric identifier appended (e.g. 562.2).
-Further columns with additional information can be appended to the right.
-<u>3. Examples</u>
-A
-@@SEQUENCEID  TAXID	BINID
-read1201	123	123
-read1202	123	123
-read1203	131564	131564
-read1204	562	562.1
-read1205	562	562.2
-<br>
-B
-@@SEQUENCEID	TAXID
-read1201	123
-read1202	123
-read1203	131564
-read1204	562
-read1205	562
-<br>
-C
-@@SEQUENCEID	BINID
-read1201	12346BIN
-read1202	ANOTHERBIN
-read1203	BIN6
-read1204	BIN5
+The CAMI format for binning is the <a href="https://github.com/SIBCI/rfc/blob/release/v0.8/rfc.mkd#binning-container">SICBI binning</a> format. 
 
 What is the format of the CAMI profiling file? 
-CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI taxonomic profiling format was specified for this contest and is intended to serve as a standard format for taxonomic profiling methods. It is a TAB-delimited text format consisting of a header section and an output section.
-The header must be prior the output. The Header line starts with '@@'.
-Each output line has 4 mandatory fields: The TAXID, the RANK, TAXPATH and the PERCENTAGE. Further optional columns can be appended to the right.
-<u>1. The header section</u>
-The header line begins with '@@' and includes tab-separated column tags, where TAG is a variable string that defines the content and format for the output section.
-The order of the columns should match: TAXID RANK TAXPATH PERCENTAGE This line should also match: /^\@\@[A-Za-z]+(\t[A-Za-z]+)+/
-For instance:
-@@TAXID	RANK	TAXPATH	PERCENTAGE
-<u>2. The Output section</u>
-The TAXID specifies a unique alphanumeric ID for a node in a reference tree such as the NCBI taxonomy. This will be used for evaluation of your predictions with taxonomy-based measures. If you resolve to bins below existing taxonomic IDs in your reference tree, e.g. to resolve novel strains, you can append a numeric identifier to your classification, e.g. 5232.1(according to the provided taxonomy version from the download site).
-RANK includes alphanumeric identifiers that define ranks in the reference taxonomy at which the respective taxon is located. The used ranks in the NCBI taxonomy and in the CAMI contest are: superkingdom phylum class order family genus species strain.
-The PERCENTAGE field specifies what percentage of the sample was assigned to the respective TAXID. The PERCENTAGE can be a real number between 0 and 100. The percentages given for all taxa from the same rank should sum up to <= 100%, that is, if something is unassigned, this will be reflected in a percentage of less than 100% being assigned.
-The TAXPATH and TAXPATH_SN tag is the path from the root of the reference taxonomy to the respective taxon, where alphanumeric identifiers such as the TAXIDs (TAXPATH) or the taxonomic names (TAXPATH_SN) for all taxa that lie on this path are included. We are not parsing this column for the competition but will use the distributed NCBI reference taxonomy version. Please ensure that your predictions comply with this version. Taxonomic identifers in the TAXPATH and TAXPATH_SV for different taxonomic ranks are separated by "|". If a TAXID is missing at a rank or there is no name, this can be marked with an empty entry in the TAXPATH and TAXPATH_SN "||". For partial paths from the root to an internal node, you only need to fill in the path until you reach the node.
-<br>
-Examples:
-Example for TAXPATH_SN:
-Archaea|Thaumarchaeota|||Aigarchaeota archaeon JGI 0000001-A7
-<br>
-Example for TAXPATH
-2157|651137 |651142 |1104572 |1052838
-<br>
-Further fields with additional information can be appended to the right. Each output line should match: /^([A-Za-z0-9\|\_\s]\t)+([0-9]{0,3}\.[0-9]+)/
-<u>3. Example</u>
-@@TAXID	RANK	TAXPATH	TAXPATH_SN	PERCENTAGE
-2	superkingdom	2	Bacteria	98.81211
-2157	superkingdom	2157	Archaea	1.18789
-1239	phylum	2|1239	Bacteria|Firmicutes	59.75801
-1224	phylum	2|1224	Bacteria|Proteobacteria	18.94674
+The CAMI format for binning is the <a href="https://github.com/SIBCI/rfc/blob/release/v0.8/rfc.mkd#profiling-container">SICBI binning</a> format. 
+You get the sample ID tag for every sample of a dataset when you do the following steps:
+1. <a href="https://data.cami-challenge.org/accountLoginView">Login</a>
+2. Go to to <a href="https://data.cami-challenge.org/participate">Up- and Download</a> section.
+3. Open a restricted or public download section.
+4. No you find for every sample a specific id.
+<strong>Note! </strong> If you want to submit for a dataset, you can just concatenate the binning files.
 
 I cannot get the docker installation to work, what do I do?
 Please contact us, we are happy to help.
