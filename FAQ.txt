@@ -184,3 +184,7 @@ You are free to submit for one or multiple tasks, there is no need to submit res
 
 Do I have to submit my codes in any particular language?
 You can submit your codes / software in any language you like. It should be installed ready to execute in a docker container. The instructions how to install it we will make available soon. We will also offer help with this, if wanted, via Skype.
+
+What is the format of the abundance file in the data simulation pipeline ?
+It is a tab-separated file with the following columns:
+genome ID | sequence name | filename of the sequence | abundance (float) | length of the sequence (int) | type (c:centroid,p:plasmid) 
