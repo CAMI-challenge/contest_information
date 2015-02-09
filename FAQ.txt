@@ -187,4 +187,4 @@ You can submit your codes / software in any language you like. It should be inst
 
 What is the format of the abundance file in the data simulation pipeline ?
 It is a tab-separated file with the following columns:
-genome ID | sequence name | filename of the sequence | abundance (float) | length of the sequence (int) | type (c:centroid,p:plasmid) 
+genome ID | sequence name | filename of the sequence | abundance (float) | length of the sequence (int) | type (c:chromosomal DNA,p:plasmid) 
