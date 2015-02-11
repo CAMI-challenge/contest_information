@@ -69,7 +69,7 @@ You have to do the following steps after the download of a dataset and the execu
 3.Find the dataset you want to submit for.
 4.Click the Add Assembly, Add Binning or Add Profiling button.
 5.Fill in the form. For the fingerprint field you have to download our <a href="https://data.cami-challenge.org/participantCamiClient">cami client jar</a> (See next step).
-6.Run the cami client: java -jar camiClient.jar with the parameter -fa for assembly files -fb for binning files or -fp for profiling files. Now enter the returned fingerprint in the input field. 
+6.Run the cami client: java -jar camiClient.jar with the parameter -af for assembly files -bf for binning files or -pf for profiling files. Now enter the returned fingerprint in the input field. 
 <br>
 <b>Note!</b> You have to execute the cami client jar and submit the form every time you change the file.
 <br>
