@@ -24,7 +24,7 @@ Each header line MUST begin with the character `@`. A single `@` defines a
 key-value pair in the format **TAG:VALUE** where **TAG** MUST be an
 alphanumeric string. Tags are case insensitive but MAY be specified using upper
 and lower case letters for better readability. All tags MUST be unique per file.
- **VALUE** MUST NOT contain characters other than alphanumerical and `,.:;_-|`.
+ **VALUE** MUST NOT contain characters other than alphanumerical and `,.;_-|`.
 More precisely, each non-empty and non-comment header line except for the last
 header line MUST match the regular expression `^\@([A-Za-z]+_)?[A-Za-z]+[A-Za-z0-9]*\:[A-Za-z0-9,.:;_|]*$`
 
