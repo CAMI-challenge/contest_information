@@ -1,6 +1,6 @@
 ## The CAMI (Taxonomic) Profiling Output Format 
 
-### The CAMI tax. profiling format specification
+### 1. Outline
 
 
 CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI taxonomic profiling format was originally specified for this contest. Because it is intended to serve as a standard format for taxonomic profiling methods, it is now maintained at https://github.com/bioboxes/rfc and all taxonomic profiling submissions for CAMI must comply to the Bioboxes Profiling Format version 0.9.
@@ -9,7 +9,7 @@ In addition to the format specification, CAMI requires additional criteria to be
 
 * Participants must provide results in terms of the taxonomy version provided by CAMI and using taxon identifiers which are valid in this taxonomy. The header tag TaxonomyId should be set to the provided version ncbi-taxonomy_DATE. We are only parsing TAXPATH, not TAXPATHSN, for the competition and we will use the distributed NCBI reference taxonomy version for this. Please ensure that your predictions comply completely with this version. As an exception, you can add a numeric suffix to an NCBI taxon identifier to specify a leave taxon which can't be found in the taxonomy version, for instance TaxID.1 to identify a new species or strain in taxon TaxID.
 
-### Description of header tags
+### 2. Description of header tags
 
        #CAMI Submission for Taxonomic Profiling
 This line is an optional commment line describing the file content.
@@ -20,14 +20,14 @@ This line give information about the format version.
        @SampleID:SAMPLEID
 SAMPLEID is a unique identifier for a sequence sample. Do not give a tool name or your name here, we want to process submissions anonymously. A submission ID will be assigned internally for a set of processed samples submitted together. 
 
-       @Ranks:
+       @Ranks:superkingdom|phylum|class|order|family|genus|species|strain
 This line defines the used ranks according to the provided version of the NCBI taxonomy.
 
        @@TAXID	RANK	TAXPATH	TAXPATHSN	PERCENTAGE	
 The last line is always the header for the output section and begins with '@@'. It defines the content of the output columns in a tab-separated format. The tags are described in the output section below. 
 
 
-2. Description of output section
+3. Description of output section
 --------------------------------
 
 The TAXID specifies a unique alphanumeric ID for a node in a reference tree such as the NCBI taxonomy. This will be used for evaluation of your predictions with taxonomy-based measures. If you resolve to bins below existing taxonomic IDs in your reference tree, e.g. to resolve novel strains, you can append a numeric identifier to your classification, e.g. 5232.1(according to the provided taxonomy version from the download site).
@@ -39,7 +39,7 @@ The PERCENTAGE field specifies what percentage of the sample was assigned to the
 The TAXPATH and TAXPATHSN tag is the path from the root of the reference taxonomy to the respective taxon, where alphanumeric identifiers such as the TAXIDs (TAXPATH) or the taxonomic names (TAXPATHSN) for all taxa that lie on this path are included. We are not parsing this column for the competition but will use the distributed NCBI reference taxonomy version. Please ensure that your predictions comply with this version. Taxonomic identifers in the TAXPATH and TAXPATHSN for different taxonomic ranks are separated by "|". If a TAXID is missing at a rank or there is no name, this can be marked with an empty entry in the TAXPATH and TAXPATHSN "||". For partial paths from the root to an internal node, you only need to fill in the path until you reach the node. 
 
 
-3. Example
+4. Example
 ----------
 
        #CAMI Submission for Taxonomic Profiling
