@@ -10,7 +10,7 @@ CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI taxon
 
 In addition to the format specification, CAMI requires additional criteria to be met.
 
-Participant must provide results in terms of the taxonomy version provided by CAMI and using taxon identifiers which are valid in this taxonomy. The header tag TaxonomyId should be set to the provided version ncbi-taxonomy_DATE. We are only parsing TAXPATH, not TAXPATHSN, for the competition and we will use the distributed NCBI reference taxonomy version for this. Please ensure that your predictions comply completely with this version. As an exception, you can add a numeric suffix to an NCBI taxon identifier to specify a low-level taxon which can't be found in the taxonomy version, for instance TaxID.1 to identify a new species or strain in taxon TaxID.
+Participants must provide results in terms of the taxonomy version provided by CAMI and using taxon identifiers which are valid in this taxonomy. The header tag TaxonomyId should be set to the provided version ncbi-taxonomy_DATE. We are only parsing TAXPATH, not TAXPATHSN, for the competition and we will use the distributed NCBI reference taxonomy version for this. Please ensure that your predictions comply completely with this version. As an exception, you can add a numeric suffix to an NCBI taxon identifier to specify a low-level taxon which can't be found in the taxonomy version, for instance TaxID.1 to identify a new species or strain in taxon TaxID.
 
 The header tag CAMI_ContestantID contains the CAMI contestant ID in order to identify the submission.
 
@@ -79,4 +79,3 @@ The TAXPATH and TAXPATHSN tag is the path from the root of the reference taxonom
 356	order	2|1224|28211|356	Bacteria|Proteobacteria|Alphaproteobacteria|Rhizobacteria	10.52311
 204455	order	2|1224|28211|204455	Bacteria|Proteobacteria|Alphaproteobacteria|Rhodobacterales	8.42263
 2158	order	2157|28890|183925|2158	Archaea|Euryarchaeotes|Methanobacteria|Methanobacteriales	1.18789
-
