@@ -2,7 +2,7 @@
 
   * Version:    0.9.1
   * Maintainer: Johannes Dröge <johannes.droege@uni-duesseldorf.de>
-  * Authors:    all authors involved
+  * Authors:    Alice C. McHardy <alice.mchardy@helmholtz-hzi.de>,  Johannes Dröge <johannes.droege@uni-duesseldorf.de>, Peter Belmann <pbelmann@cebitec.uni-bielefeld.de>, Stephan Majda <stephan.majda@uni-duesseldorf.de>
 
 ###1. Outline
 
