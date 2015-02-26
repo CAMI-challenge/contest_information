@@ -26,26 +26,26 @@ alphanumeric string. Tags are case insensitive but MAY be specified using upper
 and lower case letters for better readability. All tags MUST be unique per file.
  **VALUE** MUST NOT contain characters other than alphanumerical and `,.;_-|`.
 More precisely, each non-empty and non-comment header line except for the last
-header line MUST match the regular expression `^\@([A-Za-z]+_)?[A-Za-z]+[A-Za-z0-9]*\:[A-Za-z0-9,.:;_|]*$`
+header line MUST match the regular expression `^\@([A-Za-z]+_)?[A-Za-z]+[A-Za-z0-9]*\:[A-Za-z0-9,.;_|]*$`
 
 The specification requires that the following header tags MUST be present:
 
-  * **SAMPLEID**: VALUE is the sample identifier, not the generating user or
+  * **SAMPLEID**: **VALUE** is the sample identifier, not the generating user or
   program name. It MUST match the regular expression `[A-Za-z0-9._]+` and should
   be unique for the set of relevant samples.
-  * **VERSION**: VALUE MUST specify the profiling format version in the heading
+  * **VERSION**: **VALUE** MUST specify the profiling format version in the heading
   of this specification and MUST match the regular expression `[0-9.]`
-  * **RANKS**: VALUE MUST specify a list of allowed ranks for the
+  * **RANKS**: **VALUE** MUST specify a list of allowed ranks for the
   taxa in the output section and ranks MUST be given in increasing order of their
   distance from the taxonomy root. Each rank MUST be a lower case alphanumerical
   string and each such entry MUST be separated from the previous entry by the '|'
-  character. Therefore, VALUE MUST match the regular expression `[a-z]+(\|[a-z]+)*`
+  character. Therefore, **VALUE** MUST match the regular expression `[a-z]+(\|[a-z]+)*`
   For example, considering the major ranks in the NCBI taxonomy, VALUE could be
   specified as `superkingdom|phylum|class|order|family|genus|species`.
 
 The following tags MAY be given:
 
-  * **TAXONOMYID**: VALUE specifies a precise identifier of the external taxonomy
+  * **TAXONOMYID**: **VALUE** specifies a precise identifier of the external taxonomy
   which was used in the output section. **TAXID** values should be valid
   taxon identifiers in this taxonomy.
   
@@ -83,7 +83,7 @@ For instance:
 
 An output line MUST consist of TAB-separated fields and MUST correspond to
 the last header line definition. Each field MUST match the regular expression
-`[A-Za-z0-9,.:;_|-]*`. This specification defines the following field types:
+`[A-Za-z0-9,.;_|-]*`. This specification defines the following field types:
 
 **TAXID**: Fields MUST correspond to unique alphanumeric taxon identifiers,
 for instance in the NCBI taxonomy. Each individual field MUST match the
@@ -96,7 +96,8 @@ case-sensitive.
 
 **PERCENTAGE**: Fields specify the relative genome abundance assigned to
 the respective TAXID. The PERCENTAGE can be a real number between 0 and 100
-but MUST NOT exceed 6 digits after the decimal point. The sum of percentages
+but MUST NOT exceed 6 digits after the decimal point, so it MUST matcht the
+regular expression `[0-9]+(.[0-9]{0,6})?`. The sum of percentages
 given for all taxa from the same rank MUST NOT exceed 100, that is, if
 something is unassigned, this will be reflected in a percentage of less than
 100% being assigned.
