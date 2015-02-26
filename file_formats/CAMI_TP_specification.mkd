@@ -1,25 +1,18 @@
 The CAMI (Taxonomic) Profiling Output Format 
 
-1. The CAMI tax. profiling format specification
----------------------------------------------
+### 1. The CAMI tax. profiling format specification
+
 
 CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI taxonomic profiling format was originally specified for this contest. Because it is intended to serve as a standard format for taxonomic profiling methods, it is now maintained at https://github.com/bioboxes/rfc and all taxonomic profiling submissions for CAMI must comply to the Bioboxes Profiling Format version 0.9.
 
 1.1 Additional requirements specific to the CAMI contest
---------------------------------------------------------
+
 
 In addition to the format specification, CAMI requires additional criteria to be met.
 
-Participants must provide results in terms of the taxonomy version provided by CAMI and using taxon identifiers which are valid in this taxonomy. The header tag TaxonomyId should be set to the provided version ncbi-taxonomy_DATE. We are only parsing TAXPATH, not TAXPATHSN, for the competition and we will use the distributed NCBI reference taxonomy version for this. Please ensure that your predictions comply completely with this version. As an exception, you can add a numeric suffix to an NCBI taxon identifier to specify a low-level taxon which can't be found in the taxonomy version, for instance TaxID.1 to identify a new species or strain in taxon TaxID.
+Participants must provide results in terms of the taxonomy version provided by CAMI and using taxon identifiers which are valid in this taxonomy. The header tag TaxonomyId should be set to the provided version ncbi-taxonomy_DATE. We are only parsing TAXPATH, not TAXPATHSN, for the competition and we will use the distributed NCBI reference taxonomy version for this. Please ensure that your predictions comply completely with this version. As an exception, you can add a numeric suffix to an NCBI taxon identifier to specify a leave taxon which can't be found in the taxonomy version, for instance TaxID.1 to identify a new species or strain in taxon TaxID.
 
-The header tag CAMI_ContestantID contains the CAMI contestant ID in order to identify the submission.
-
-The header tag CAMI_Task contains the string "Profiling" in order to specify the contest type.
-
-Generated files should be named with the suffix ".camip".
-
-2. Description of header tags
------------------------------
+### 2. Description of header tags
 
 #CAMI Submission for Taxonomic Profiling
 This line is an optional commment line describing the file content.
