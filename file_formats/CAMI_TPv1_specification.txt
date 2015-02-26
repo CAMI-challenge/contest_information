@@ -31,7 +31,7 @@ This line defines the type of output found below.
 A CONTESTANTID will be assigned to you when you download the 
 data set.
 
-@Version:0.9
+@Version:0.9.1
 This line give information about the format version.
 
 @SampleID:SAMPLEID
