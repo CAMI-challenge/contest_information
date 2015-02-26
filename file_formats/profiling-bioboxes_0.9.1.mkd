@@ -4,7 +4,7 @@
   * Maintainer: Johannes Dröge <johannes.droege@uni-duesseldorf.de>
   * Authors:    all authors involved
 
-###1.The profiling format specification
+###1. Outline
 
 The taxonomic profiling format was originally specified for the CAMI contest
 and is intended to serve as a working standard format for the output of
@@ -18,7 +18,7 @@ MAY occur anywhere in the output for better readability. Only the UNIX newline
 character `\n` MUST be used to define the end of a line and the text MUST be
 valid UTF-8 encoding.
 
-###1.2 The header section
+###2. Header section
 
 Each header line MUST begin with the character `@`. A single `@` defines a
 key-value pair in the format **TAG:VALUE** where **TAG** MUST be an
@@ -79,7 +79,7 @@ For instance:
 
   @@TAXID	RANK	TAXPATH	TAXPATHSN	PERCENTAGE
 
-###1.3 The output section
+###3. Output section
 
 An output line MUST consist of TAB-separated fields and MUST correspond to
 the last header line definition. Each field MUST match the regular expression
@@ -126,7 +126,7 @@ or
     2157|651137|651142|1104572|1052838
 
 
-###1.4 EXAMPLE
+###4. Example
 
     # Taxonomic Profiling Output
     @SampleID:SAMPLEID
