@@ -120,6 +120,8 @@ For instance:
     # Example for TAXPATHSN:
     Archaea|Thaumarchaeota|||Aigarchaeota archaeon JGI 0000001-A7
 
+or
+
     # Example for TAXPATH:
     2157|651137|651142|1104572|1052838
 
