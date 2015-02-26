@@ -3,7 +3,7 @@ The CAMI (Taxonomic) Profiling Output Format
 1. The CAMI tax. profiling format specification
 ---------------------------------------------
 
-CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI taxonomic profiling format was originally specified for this contest. Because it is intended to serve as a standard format for taxonomic profiling methods, it is now maintained at https://github.com/bioboxes and all taxonomic profiling submissions for CAMI must comply to the Bioboxes Profiling Format version 0.9.
+CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI taxonomic profiling format was originally specified for this contest. Because it is intended to serve as a standard format for taxonomic profiling methods, it is now maintained at https://github.com/bioboxes/rfc and all taxonomic profiling submissions for CAMI must comply to the Bioboxes Profiling Format version 0.9.
 
 1.1 Additional requirements specific to the CAMI contest
 --------------------------------------------------------
