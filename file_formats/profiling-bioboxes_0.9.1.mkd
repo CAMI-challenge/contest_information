@@ -99,13 +99,14 @@ regular expression `[A-Za-z0-9\.;,\(\)_\-\ ]+`
 which MUST be given in the header TAG **RANKS**. It specifies where the respective
 taxon given by **TAXID**, **TAXPATH** or **TAXPATHSN** is located.
 
-**PERCENTAGE**: Fields specify the relative genome abundance assigned to
-the respective TAXID. The PERCENTAGE can be a real number between 0 and 100
-but MUST NOT exceed 6 digits after the decimal point, so it MUST matcht the
-regular expression `[0-9]+(\.[0-9]{0,6})?`. The sum of percentages
-given for all taxa from the same rank MUST NOT exceed 100, that is, if
-something is unassigned, this will be reflected in a percentage of less than
-100% being assigned.
+**PERCENTAGE**: Fields specify the relative genome abundance in terms of the
+genome copy number for the respective TAXID in the overall sample. Note that this
+is not identical to the relative abundance in terms of assigned base pairs.
+The PERCENTAGE can be a real number between 0 and 100 but MUST NOT exceed 6 digits
+after the decimal point, so it MUST matcht the regular expression
+`[0-9]+(\.[0-9]{0,6})?`. The sum of percentages given for all taxa from the same
+rank MUST NOT exceed 100, that is, if something is unassigned, this will be
+reflected in a percentage of less than 100% being assigned.
 
 **TAXPATH** and **TAXPATHSN**: Fields specify the path from the root of the
 taxonomy to the respective taxon, where alphanumeric identifiers such as the
