@@ -1,0 +1,148 @@
+## The Profiling Output Format 
+
+  * Version:    0.9.1
+  * Maintainer: Johannes Dröge <johannes.droege@uni-duesseldorf.de>
+  * Authors:    all authors involved
+
+###1.The profiling format specification
+
+The taxonomic profiling format was originally specified for the CAMI contest
+and is intended to serve as a working standard format for the output of
+taxonomic profiling methods.
+
+It is a TAB ('\t') delimited text format consisting of a header section and an
+output section. The header section MUST be above the output section and header
+lines MUST start with '@' whereas output lines MUST NOT. Comment lines MUST
+start with '#' and MAY occur both in the header and output section. Empty lines
+MAY occur anywhere in the output for better readability. Only the UNIX newline
+character '\n' MUST be used to define the end of a line and the text MUST be
+valid UTF-8 encoding.
+
+###1.2 The header section
+
+Each header line MUST begin with the character '@'. A single '@' defines a
+key-value pair in the format **TAG:VALUE** where **TAG** MUST be an
+alphanumeric string. Tags are case insensitive but MAY be specified using upper
+and lower case letters for better readability. All tags MUST be unique per file.
+ **VALUE** MUST NOT contain characters other than alphanumerical and ',.:;_-|'.
+More precisely, each non-empty and non-comment header line except for the last
+header line MUST match the regular expression
+^\@([A-Za-z]+_)?[A-Za-z]+[A-Za-z0-9]*\:[A-Za-z0-9,.:;_|]*$
+
+The specification requires that the following header tags MUST be present:
+
+  * **SAMPLEID**: VALUE is the sample identifier, not the generating user or
+  program name. It MUST match the regular expression [A-Za-z0-9._]+ and should
+  be unique for the set of relevant samples.
+  * **VERSION**: VALUE MUST specify the profiling format version in the heading
+  of this specification and MUST match the regular expression [0-9.]
+  * **RANKS**: VALUE MUST specify a list of allowed ranks for the
+  taxa in the output section and ranks MUST be given in increasing order of their
+  distance from the taxonomy root. Each rank MUST be a lower case alphanumerical
+  string and each such entry MUST be separated from the previous entry by the '|'
+  character. Therefore, VALUE MUST match the regular expression [a-z]+(\|[a-z]+)*
+  For example, considering the major ranks in the NCBI taxonomy, VALUE could be
+  specified as "superkingdom|phylum|class|order|family|genus|species".
+
+The following tags MAY be given:
+
+  * **TAXONOMYID**: VALUE specifies a precise identifier of the external taxonomy
+  which was used in the output section. **TAXID** values should be valid
+  taxon identifiers in this taxonomy.
+  
+Additional tags and values MAY be specified but each additional tag MUST be
+prefixed by a case-insensitive string, e.g. **CUSTOM_**, to avoid collisions when
+this specification is extended in the future.
+
+The last header line MUST begin with '@@' and defines TAB-separated column tags,
+where each **TAG** MUST be a string matching the regular expression
+[A-Za-z]+[A-Za-z0-9]* and defines the content and format of values in the
+corresponding column of the output section. Tags are considered case-insensitive
+but MAY be specified using upper and lower case letters for better readability.
+The tags MUST be unique in this line. The leading tags and their corresponding
+order MUST be
+
+  * **TAXID**
+  * **RANK**
+  * **TAXPATH**
+  * **PERCENTAGE**
+
+except that **TAXPATH** MAY be followed by the optional tag **TAXPATHSN**.
+
+Additional columns MAY be appended to the right after **PERCENTAGE** but MUST be
+prefixed by a case-insensitive string, e.g. **CUSTOM_**.
+
+The last header line MUST match the regular expression
+
+  ^\@\@[Tt][Aa][Xx][Ii][Dd]\t[Rr][Aa][Nn][Kk]\t[Tt][Aa][Xx][Pp][Aa][Tt][Hh]\t([Tt][Aa][Xx][Pp][Aa][Tt][Hh][Ss][Nn]\t)?[Pp][Ee][Rr][Cc][Ee][Nn][Tt][Aa][Gg][Ee](\t([A-Za-z]+_[A-Za-z0-9]+)*$
+
+For instance:
+
+  @@TAXID	RANK	TAXPATH	PERCENTAGE
+
+  @@TAXID	RANK	TAXPATH	TAXPATHSN	PERCENTAGE
+
+###1.3 The Output section
+
+An output line MUST consist of TAB-separated fields and MUST correspond to
+the last header line definition. Each field MUST match the regular expression
+[A-Za-z0-9,.:;_|-]*. This specification defines the following field types:
+
+**TAXID**: fields MUST correspond to unique alphanumeric taxon identifiers,
+for instance in the NCBI taxonomy. Each individual field MUST match the
+regular expression [A-Za-z0-9.]+
+
+**RANK** fields: MUST match one of the rank identifiers which MUST be given
+in the header TAG **RANKS**. It specifies where the respective taxon given
+by **TAXID**, **TAXPATH** or **TAXPATHSN** is located. Ranks are considered
+case-sensitive.
+
+**PERCENTAGE** fields: Specify the relative genome abundance assigned to
+the respective TAXID. The PERCENTAGE can be a real number between 0 and 100
+but MUST NOT exceed 6 digits after the decimal point. The sum of percentages
+given for all taxa from the same rank MUST NOT exceeed 100, that is, if
+something is unassigned, this will be reflected in a percentage of less than
+100% being assigned.
+
+**TAXPATH** and **TAXPATHSN** fields: Specify the path from the root of the
+taxonomy to the respective taxon, where alphanumeric identifiers such as the
+TAXIDs (**TAXPATH**) or plain taxonomic names (**TAXPATHSN**) for all taxa
+which lie on this path are included. The path entries MUST be separated by a
+single '|' character and MUST be specified at the ranks and using their
+respective order as specified by the **RANKS** header tag. In particular, if
+the taxonomic path lacks a specified rank, this field MUST be left empty and
+would show as "||". Empty trailing taxon entries MAY be omitted and taxon
+entries which are not specified by the **RANKS** tag MAY only be appended to
+the right of a full path. Each **TAXPATH** field MUST match the regular
+expression [A-Za-z0-9.]+(\|[A-Za-z0-9.]+)* and each TAXPATHSN field MUST
+match the regular expression [A-Za-z0-9_-]+(\|[A-Za-z0-9_-]+)*
+
+For instance:
+
+    # Example for TAXPATHSN:
+    Archaea|Thaumarchaeota|||Aigarchaeota archaeon JGI 0000001-A7
+
+    # Example for TAXPATH:
+    2157|651137|651142|1104572|1052838
+
+
+###1.4 EXAMPLE
+
+    # Taxonomic Profiling Output
+    @SampleID:SAMPLEID
+    @Version:0.9.1
+    @Ranks:superkingdom|phylum|class|order|family|genus|species
+    @TaxonomyID:ncbi-taxonomy_DATE
+    @@TAXID	RANK	TAXPATH	TAXPATHSN	PERCENTAGE
+    2	superkingdom	2	Bacteria	98.81211
+    2157	superkingdom	2157	Archaea	1.18789
+    1239	phylum	2|1239	Bacteria|Firmicutes	59.75801
+    1224	phylum	2|1224	Bacteria|Proteobacteria	18.94674
+    28890	phylum	2157|28890	Archaea|Euryarchaeotes	1.18789
+    91061	class	2|1239|91061	Bacteria|Firmicutes|Bacilli	59.75801
+    28211	class	2|1224|28211	Bacteria|Proteobacteria|Alphaproteobacteria	18.94674
+    183925	class	2157|28890|183925	Archaea|Euryarchaeotes|Methanobacteria	1.18789
+    1385	order	2|1239|91061|1385	Bacteria|Firmicutes|Bacilli|Bacillales	59.75801
+    356	order	2|1224|28211|356	Bacteria|Proteobacteria|Alphaproteobacteria|Rhizobacteria	10.52311
+    204455	order	2|1224|28211|204455	Bacteria|Proteobacteria|Alphaproteobacteria|Rhodobacterales	8.42263
+    2158	order	2157|28890|183925|2158	Archaea|Euryarchaeotes|Methanobacteria|Methanobacteriales	1.18789
