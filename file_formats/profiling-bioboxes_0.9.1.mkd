@@ -45,7 +45,7 @@ The specification requires that the following header tags MUST be present:
 
 The following tags MAY be given:
 
-  * **TAXONOMYID**: **VALUE** specifies a precise identifier of the external taxonomy
+  * **TAXONOMYID**: **VALUE** specifies an identifier of the external taxonomy
   which was used in the output section. **TAXID** values should be valid
   taxon identifiers in this taxonomy.
   
