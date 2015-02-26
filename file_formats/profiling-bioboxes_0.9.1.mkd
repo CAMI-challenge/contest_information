@@ -75,9 +75,11 @@ The last header line MUST match the regular expression `^\@\@[Tt][Aa][Xx][Ii][Dd
 
 For instance:
 
-  @@TAXID	RANK	TAXPATH	PERCENTAGE
+    @@TAXID	RANK	TAXPATH	PERCENTAGE
 
-  @@TAXID	RANK	TAXPATH	TAXPATHSN	PERCENTAGE
+or
+
+    @@TAXID	RANK	TAXPATH	TAXPATHSN	PERCENTAGE
 
 ###3. Output section
 
