@@ -85,23 +85,23 @@ An output line MUST consist of TAB-separated fields and MUST correspond to
 the last header line definition. Each field MUST match the regular expression
 `[A-Za-z0-9,.:;_|-]*`. This specification defines the following field types:
 
-**TAXID**: fields MUST correspond to unique alphanumeric taxon identifiers,
+**TAXID**: Fields MUST correspond to unique alphanumeric taxon identifiers,
 for instance in the NCBI taxonomy. Each individual field MUST match the
 regular expression `[A-Za-z0-9.]+`
 
-**RANK** fields: MUST match one of the rank identifiers which MUST be given
+**RANK**: Fields MUST match one of the rank identifiers which MUST be given
 in the header TAG **RANKS**. It specifies where the respective taxon given
 by **TAXID**, **TAXPATH** or **TAXPATHSN** is located. Ranks are considered
 case-sensitive.
 
-**PERCENTAGE** fields: Specify the relative genome abundance assigned to
+**PERCENTAGE**: Fields specify the relative genome abundance assigned to
 the respective TAXID. The PERCENTAGE can be a real number between 0 and 100
 but MUST NOT exceed 6 digits after the decimal point. The sum of percentages
 given for all taxa from the same rank MUST NOT exceed 100, that is, if
 something is unassigned, this will be reflected in a percentage of less than
 100% being assigned.
 
-**TAXPATH** and **TAXPATHSN** fields: Specify the path from the root of the
+**TAXPATH** and **TAXPATHSN**: Fields specify the path from the root of the
 taxonomy to the respective taxon, where alphanumeric identifiers such as the
 TAXIDs (**TAXPATH**) or plain taxonomic names (**TAXPATHSN**) for all taxa
 which lie on this path are included. The path entries MUST be separated by a
