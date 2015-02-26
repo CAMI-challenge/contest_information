@@ -79,7 +79,7 @@ For instance:
 
   @@TAXID	RANK	TAXPATH	TAXPATHSN	PERCENTAGE
 
-###1.3 The Output section
+###1.3 The output section
 
 An output line MUST consist of TAB-separated fields and MUST correspond to
 the last header line definition. Each field MUST match the regular expression
