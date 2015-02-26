@@ -97,7 +97,7 @@ case-sensitive.
 **PERCENTAGE** fields: Specify the relative genome abundance assigned to
 the respective TAXID. The PERCENTAGE can be a real number between 0 and 100
 but MUST NOT exceed 6 digits after the decimal point. The sum of percentages
-given for all taxa from the same rank MUST NOT exceeed 100, that is, if
+given for all taxa from the same rank MUST NOT exceed 100, that is, if
 something is unassigned, this will be reflected in a percentage of less than
 100% being assigned.
 
