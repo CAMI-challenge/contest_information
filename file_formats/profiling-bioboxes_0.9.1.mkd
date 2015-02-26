@@ -41,9 +41,9 @@ The specification requires that the following header tags MUST be present:
   of this specification and MUST match the regular expression `[0-9\.]`
   * **RANKS**: **VALUE** MUST specify a list of allowed ranks for the
   taxa in the output section and ranks MUST be given in increasing order of their
-  distance from the taxonomy root. Each rank MUST be a lower case alphanumerical
+  distance from the taxonomy root. Each rank MUST be case-insensitive alphanumerical
   string and each such entry MUST be separated from the previous entry by the '|'
-  character. Therefore, **VALUE** MUST match the regular expression `[A-Za-z]+(\|[a-z]+)*`
+  character. Therefore, **VALUE** MUST match the regular expression `[A-Za-z]+(\|[A-Za-z]+)*`
   For example, considering the major ranks in the NCBI taxonomy, VALUE could be
   specified as `superkingdom|phylum|class|order|family|genus|species`.
 
@@ -95,10 +95,9 @@ the last header line definition. Each field MUST match the regular expression
 for instance in the NCBI taxonomy. Each individual field MUST match the
 regular expression `[A-Za-z0-9\.;,\(\)_\-\ ]+`
 
-**RANK**: Fields MUST match one of the rank identifiers which MUST be given
-in the header TAG **RANKS**. It specifies where the respective taxon given
-by **TAXID**, **TAXPATH** or **TAXPATHSN** is located. Ranks are considered
-case-sensitive.
+**RANK**: Fields are case-insensitive and MUST match one of the rank identifiers
+which MUST be given in the header TAG **RANKS**. It specifies where the respective
+taxon given by **TAXID**, **TAXPATH** or **TAXPATHSN** is located.
 
 **PERCENTAGE**: Fields specify the relative genome abundance assigned to
 the respective TAXID. The PERCENTAGE can be a real number between 0 and 100
