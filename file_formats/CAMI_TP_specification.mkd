@@ -1,0 +1,63 @@
+## The CAMI (Taxonomic) Profiling Output Format 
+
+### 1. Outline
+
+
+CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI taxonomic profiling format was originally specified for this contest. Because it is intended to serve as a standard format for taxonomic profiling methods, it is now maintained at https://github.com/bioboxes/rfc and all taxonomic profiling submissions for CAMI must comply with the Bioboxes Profiling Format version 0.9.
+
+In addition to the format specification, CAMI requires additional criteria to be met:
+
+* Participants must provide results in terms of the taxonomy version provided by CAMI and using taxon identifiers which are valid in this taxonomy. The header tag TaxonomyId should be set to the provided version ncbi-taxonomy_DATE. We are only parsing TAXPATH, not TAXPATHSN, for the competition and we will use the distributed NCBI reference taxonomy version for this. Please ensure that your predictions comply completely with this version. As an exception, you can add a numeric suffix to an NCBI taxon identifier to specify a leave taxon which can't be found in the taxonomy version, for instance TaxID.1 to identify a new species or strain in taxon TaxID.
+
+### 2. Description of header tags
+
+       #CAMI Submission for Taxonomic Profiling
+This line is an optional commment line describing the file content.
+
+       @Version:0.9.1
+This line give information about the format version.
+
+       @SampleID:SAMPLEID
+SAMPLEID is a unique identifier for a sequence sample. Do not give a tool name or your name here, we want to process submissions anonymously. A submission ID will be assigned internally for a set of processed samples submitted together. 
+
+       @Ranks:superkingdom|phylum|class|order|family|genus|species|strain
+This line defines the used ranks according to the provided version of the NCBI taxonomy.
+
+       @@TAXID	RANK	TAXPATH	TAXPATHSN	PERCENTAGE	
+The last line is always the header for the output section and begins with '@@'. It defines the content of the output columns in a tab-separated format. The tags are described in the output section below. 
+
+
+3. Description of output section
+--------------------------------
+
+The TAXID specifies a unique alphanumeric ID for a node in a reference tree such as the NCBI taxonomy. This will be used for evaluation of your predictions with taxonomy-based measures. If you resolve to bins below existing taxonomic IDs in your reference tree, e.g. to resolve novel strains, you can append a numeric identifier to your classification, e.g. 5232.1(according to the provided taxonomy version from the download site).
+
+RANK includes alphanumeric identifiers that define ranks in the reference taxonomy at which the respective taxon is located. The used ranks in the NCBI taxonomy and in the CAMI contest are: superkingdom, phylum, class, order, family, genus and species. Please refer to the leave taxon below species level as rank strain.
+
+The PERCENTAGE field specifies what percentage of the sample was assigned to the respective TAXID. The PERCENTAGE can be a real number between 0 and 100. The percentages given for all taxa from the same rank should sum up to <= 100%, that is, if something is unassigned, this will be reflected in a percentage of less than 100% being assigned. For instance, let's assume there are two species A and B in a data-set with equal genome (or cell) abundance. Let's also assume that the genome of A is three times as long as the genome of B. Then the PERCENTAGE field should be 50 for both species and not 75 for A and 25 for B, which would reflect the amount of sequence data (or number of reads) rather than the genome (or species) abundance.
+
+The TAXPATH and TAXPATHSN tag is the path from the root of the reference taxonomy to the respective taxon, where alphanumeric identifiers such as the TAXIDs (TAXPATH) or the taxonomic names (TAXPATHSN) for all taxa that lie on this path are included. We are not parsing this column for the competition but will use the distributed NCBI reference taxonomy version. Please ensure that your predictions comply with this version. Taxonomic identifers in the TAXPATH and TAXPATHSN for different taxonomic ranks are separated by "|". If a TAXID is missing at a rank or there is no name, this can be marked with an empty entry in the TAXPATH and TAXPATHSN "||". For partial paths from the root to an internal node, you only need to fill in the path until you reach the node. 
+
+If you want to specify extra columns in the output, prefix each column name with `_YourProgramName_` and only append columns to the right of the standard ones.
+
+4. Example
+----------
+
+       #CAMI Submission for Taxonomic Profiling
+       @Version:0.9.1
+       @SampleID:SAMPLEID
+       @Ranks:superkingdom|phylum|class|order|family|genus|species|strain
+       
+       @@TAXID	RANK	TAXPATH	TAXPATHSN	PERCENTAGE
+       2	superkingdom	2	Bacteria	98.81211
+       2157	superkingdom	2157	Archaea	1.18789
+       1239	phylum	2|1239	Bacteria|Firmicutes	59.75801
+       1224	phylum	2|1224	Bacteria|Proteobacteria	18.94674
+       28890	phylum	2157|28890	Archaea|Euryarchaeotes	1.18789
+       91061	class	2|1239|91061	Bacteria|Firmicutes|Bacilli	59.75801
+       28211	class	2|1224|28211	Bacteria|Proteobacteria|Alphaproteobacteria	18.94674
+       183925	class	2157|28890|183925	Archaea|Euryarchaeotes|Methanobacteria	1.18789
+       1385	order	2|1239|91061|1385	Bacteria|Firmicutes|Bacilli|Bacillales	59.75801
+       356	order	2|1224|28211|356	Bacteria|Proteobacteria|Alphaproteobacteria|Rhizobacteria	10.52311
+       204455	order	2|1224|28211|204455	Bacteria|Proteobacteria|Alphaproteobacteria|Rhodobacterales	8.42263
+       2158	order	2157|28890|183925|2158	Archaea|Euryarchaeotes|Methanobacteria|Methanobacteriales	1.18789
