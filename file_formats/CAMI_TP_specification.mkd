@@ -3,7 +3,7 @@
 ### 1. Outline
 
 
-CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI taxonomic profiling format was originally specified for this contest. Because it is intended to serve as a standard format for taxonomic profiling methods, it is now maintained at https://github.com/bioboxes/rfc and all taxonomic profiling submissions for CAMI must comply with the Bioboxes Profiling Format version 0.9.
+CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI taxonomic profiling format was originally specified for this contest. Because it is intended to serve as a standard format for taxonomic profiling methods, it is now maintained at https://github.com/bioboxes/rfc and all taxonomic profiling submissions for CAMI must comply with the [Bioboxes Profiling Format version 0.9](https://github.com/bioboxes/rfc/tree/master/data-format).
 
 In addition to the format specification, CAMI requires additional criteria to be met:
 
