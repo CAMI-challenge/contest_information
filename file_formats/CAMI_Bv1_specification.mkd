@@ -10,7 +10,13 @@ CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI binni
 This line is an optional commment line describing the file content.
 
        @Version:0.9.0
-This line give information about the format version.
+This line gives information about the format version.
+
+       @MethodType:AssemblyBased
+This line describes if your method uses additional reference information `ReferenceBased` or it works on partially assembled metagenome samples `AssemblyBased`. If it does not use additional reference information and does not work on partially assembled metagenome samples, you can use the `NONE` type. 
+
+       @SampleID:SAMPLEID
+SAMPLEID is a unique identifier for a sequence sample. Do not give a tool name or your name here, we want to process submissions anonymously.
 
        @@SEQUENCEID	TAXID	BINID	
 The last line is always the header for the output section and begins with '@@'. It defines the content of the output columns in a tab-separated format. The tags are described in the output section below. 
