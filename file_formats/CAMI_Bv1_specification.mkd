@@ -2,7 +2,7 @@
 
 ### 1. Outline
 
-CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI binning format was originally specified for this contest. Because it is intended to serve as a standard format for taxonomic profiling methods, it is now maintained at https://github.com/bioboxes/rfc and all taxonomic profiling submissions for CAMI must comply with the [Bioboxes Binning Format version 0.9](https://github.com/bioboxes/rfc/tree/master/data-format).
+CAMI stands for Critical Assessment of Metagenome Interpretation. The CAMI binning format was originally specified for this contest. Because it is intended to serve as a standard format for binning methods, it is now maintained at https://github.com/bioboxes/rfc and all binning submissions for CAMI must comply with the [Bioboxes Binning Format version 0.9](https://github.com/bioboxes/rfc/tree/master/data-format).
 
 ### 2. Description of header tags
 
@@ -27,14 +27,15 @@ The first case, example A below: If you create taxonomic bins as output without 
 
 The second case, example B below: If you create bins that do not include taxonomic assignments you do not need to include the **TAXID** column, but only the **BINID** column, in your output.
 
-The third case, example C below, is if you perform taxonomic binning and additionally resolve bins below existing taxonomic IDs, e.g. to define bins representing novel strains. In this case, you add both the TAXID. It will be easiest to check for consistency for us, if you in this case use for the BINID the TAXID entry and a numeric identifier appended (e.g. 562.2).
+The third case, example C below, is if you perform taxonomic binning and additionally resolve bins below existing taxonomic IDs, e.g. to define bins representing novel strains. In this case, you add both the **TAXID**. It will be easiest to check for consistency for us, if you in this case use for the **BINID** the **TAXID** entry and a numeric identifier appended (e.g. 562.2).
 
 If you want to specify extra columns in the output, prefix each column name with `_YourProgramName_` and only append columns to the right of the standard ones.
 
-### 5. EXAMPLES
+### 4. EXAMPLES
 
 A
 
+```
 #CAMI Format for Binning
 @Version:0.9.0
 
@@ -45,9 +46,10 @@ read1202	123
 read1203	131564	
 read1204	562	
 read1205	562	
-
+```
 B
-	
+
+```	
 #CAMI Format for Binning
 @Version:0.9.0
 
@@ -58,9 +60,11 @@ read1202	ANOTHERBIN
 read1203	BIN6	
 read1204	BIN5	
 read1205	BIN5	
+```
 
 C
 
+```
 #CAMI Format for Binning
 @Version:0.9.0
 
@@ -71,3 +75,4 @@ read1202	123	123
 read1203	131564	131564
 read1204	562	562.1
 read1205	562	562.2
+```
