@@ -12,9 +12,6 @@ This line is an optional commment line describing the file content.
        @Version:0.9.0
 This line gives information about the format version.
 
-       @MethodType:AssemblyBased
-This line describes if your method uses additional reference information `ReferenceBased` or it works on partially assembled metagenome samples `AssemblyBased`. If it does not use additional reference information and does not work on partially assembled metagenome samples, you can use the `NONE` type. 
-
        @SampleID:SAMPLEID
 SAMPLEID is a unique identifier for a sequence sample. Do not give a tool name or your name here, we want to process submissions anonymously.
 
@@ -44,7 +41,6 @@ A
 ```
 #CAMI Format for Binning
 @Version:0.9.0
-
 @@SEQUENCEID		TAXID	
 
 read1201	123	
@@ -58,7 +54,6 @@ B
 ```	
 #CAMI Format for Binning
 @Version:0.9.0
-
 @@SEQUENCEID		BINID	
 
 read1201	12346BIN
@@ -73,7 +68,6 @@ C
 ```
 #CAMI Format for Binning
 @Version:0.9.0
-
 @@SEQUENCEID		TAXID	BINID
 
 read1201	123	123
