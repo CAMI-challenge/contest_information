@@ -158,17 +158,10 @@ AAAATAGACGCACAAGCTGGCACATCACAACGAATAACCAAGCATAGAAATGAAGAAAAAGAAAATAATCATGGGAGTAG
 GAACAGGAATCCTTTTGGCTGCTGTTGCTTTTTGGGGGTGGCATTCCACACAAGCAACTTCGACAGAAATAACAAATGAA
 
 What is the format of the CAMI binning file? 
-The CAMI format for binning is the <a href="https://github.com/bioboxes/rfc/blob/master/data-format/binning.mkd#the-binning-output-format">Bioboxes binning</a> format. 
+The CAMI format for binning is specified in our CAMI <a href="https://github.com/CAMI-challenge/contest_information/blob/master/file_formats/CAMI_B_specification.mkd">Github repository</a>. 
 
 What is the format of the CAMI profiling file? 
-The CAMI format for profiling is the <a href="https://github.com/bioboxes/rfc/blob/master/data-format/profiling.mkd#the-profiling-output-format">Bioboxes profiling</a> format. 
-You get the sample ID for every sample of a dataset when you do the following steps:
-1. <a href="https://data.cami-challenge.org/accountLoginView">Login</a>
-2. Go to to <a href="https://data.cami-challenge.org/participate">Up- and Download</a> section.
-3. Open restricted or public download section.
-4. Now you find for every sample a specific id.
-<strong>Note! </strong> If you want to submit for a dataset, you can just concatenate the profiling files.<br>
-<strong>Note! </strong> If there is no sample entry for the dataset, you can enter anything in the sampleId tag.
+The CAMI format for profiling is specified in our CAMI <a href="https://github.com/CAMI-challenge/contest_information/blob/master/file_formats/CAMI_P_specification.mkd">Github repository</a>. 
 
 I cannot get the docker installation to work, what should I do?
 Please contact us, we are happy to help.
