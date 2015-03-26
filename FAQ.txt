@@ -13,7 +13,7 @@ Is CAMI open and transparent?
 Yes! The development process is done in an open community. Everybody is invited to participate. People who intend to participate will not be involved in any part of the development process that provides any information or advantage for the actual competition.
 
 Where do I find the relevant information when I want to participate in the CAMI contest?
-You can find all information on the CAMI webpage, on the page entitled 'Contest participation'.
+You can find all information on the CAMI webpage, on the page entitled <a href="http://cami-challenge.org/participate">Contest participation</a>.
 
 What is the purpose of the google+-group? 
 We use it for video hangouts in planning the CAMI contest because we are working with people from around the world. We want to get your feedback and invite tool developers to interact with the CAMI team here in defining the CAMI contest already in the development phase. You do not have to join the group if you want to participate in the contest.
