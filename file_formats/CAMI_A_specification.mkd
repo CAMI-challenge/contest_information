@@ -1,35 +1,31 @@
-The CAMI Assembly Output Format
+## The CAMI Assembly Output Format
 
-1. The CAMI assembly format specification
------------------------------------------
+### 1. Outline
 
 CAMI stands for Critical Assessment of Metagenome Interpretation.  The CAMI assembly format is a FASTA-formatted contig and scaffold file.
 
-1.2 The header section
-----------------------
+### 2. The header section
 
 The header section of the FASTA files must follow the standard FASTA guidelines and must start with ">" character followed by any alphanumeric "[A-Za-z]", whitespace (spaces and tabs), brackets "[]", underscores "_", colons "[:;]", commas ",", periods ".", pipes "|",  or hypens "-" ending with a newline character.
 
 Contigs and scaffolds should be written to output files contigs.fna and scaffolds.fna, respectively.
 
+```
 Examples:
-
 >gi|5524211|gb|AAD44166.1| cytochrome b [Elephas maximus maximus]
 ATCTG
 >scaffold-1
 ATCTG
 >Contig 2, Node 1
 ATCTG
-
-1.3 The sequence section
-------------------------
+```
+### 3. The sequence section
 
 Sequences must contain only capitalized nucleotide characters, including the ambiguous character 'N':  /[ATCGN]+/.
 
 There is no requirement on the number of nucleotides per line, but community best practices advises limiting the amount of nucleotides to 120 characters.
 
-1.4 Contigs vs. scaffolds
--------------------------
+### 4. Contigs vs. scaffolds
 
 Contigs must not contain any stretches of greater than 5 ambiguous bases (Ns) in a row.  Contigs must be split by the user at these points into smaller contigs.  There are no restrictions on the amount of contiguous ambiguous bases in scaffolds.
 
@@ -37,9 +33,8 @@ Contigs should be provided in a file called: contigs.fna
 
 Scaffolds should be provided in a file called: scaffolds.fna
 
-1.5 Examples
-------------
-
+### 5. Examples
+```
 >NODE_1331_length_1852_cov_20.7969_ID_2661
 CTATTTTTAAATATCCGCGTACTTACTGAGTTATCGTGGCAGTTTTTGCTAATTTTGCGATTTTTGCCACGATAACTTGT
 TAAAAAATATGACGTCTGCAATTCTTGTTGCTTTTACACTACAAAAAAGATAAAATATTAGTATGAAAGCAACAGAAGTG
@@ -55,3 +50,4 @@ AAAATAGACGCACAAGCTGGCACATCACAACGAATAACCAAGCATAGAAATGAAGAAAAAGAAAATAATCATGGGAGTAG
 GAACAGGAATCCTTTTGGCTGCTGTTGCTTTTTGGGGGTGGCATTCCACACAAGCAACTTCGACAGAAATAACAAATGAA
 ATGGAAAGCGCCATGCACAACGAGCCTGTTGGTCCTGCTTTTGAAGCCGATTCTGCGTACCGTTATATTGAAGCACAATG
 TAGTTTCGGCCCTCGCACCATGAACAGCGAAGCACACGAACAATGTGCGGAGTGGATTAT
+```
