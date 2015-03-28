@@ -18,9 +18,6 @@ CAMI encourages participants to submit reproducible results by providing their e
 Where do I find the relevant information when I want to participate in the CAMI contest?
 You can find all information on the CAMI webpage, on the page entitled <a href="http://cami-challenge.org/participate">Contest participation</a>.
 
-What is the purpose of the google+-group? 
-We use it for video hangouts in planning the CAMI contest because we are working with people from around the world. We want to get your feedback and invite tool developers to interact with the CAMI team here in defining the CAMI contest already in the development phase. You do not have to join the group if you want to participate in the contest.
-
 Why should I participate in the contest?
 There are various reasons why you might want to participate. 
 - First, you will receive feedback for your methods performance on a larger number of data sets. 
@@ -37,8 +34,8 @@ The first CAMI challenge has started on March 27th.
 How long will the CAMI contest last?
 CAMI will be open overall for 3 months. First, six weeks for the assembly methods, and methods that process read data sets. After six weeks, a gold standard assembly will be provided for methods that work on assembled data sets. At this point, the assembly competition will end.
 
-How large will the data sets be that will be generated?
-This will be around 120 Gbp of sequence overall and 8-9 samples. 
+How large are the data sets?
+There are three data sets, consisting of 15 to 75 Gbp of sequence each, and between 1 and 5 samples.
 
 What are the data access policies for the CAMI challenge? 
 CAMI data sets have been generated from unpublished genome data provided by multiple laboratories who want to control the data release date. Therefore, the CAMI data sets will become fully available, together with the gold standard, after the competition has ended and once the data contributors have released their data. Until then, a data recipient is not allowed to publish the data, deposit the sequences in any database or use it for other purposes than participating in the CAMI challenge. The data recipient agrees to delete and/or trash the data in all forms when the CAMI Challenge is ended to the time until it has been officially released.
@@ -47,10 +44,10 @@ If I do not have access to sufficient compute time on my own, what are my option
 The Pittsburgh Supercomputing Center (PSC) is making compute time and storage available on their SGI UV1000 system, Blacklight to do genome assembly for the CAMI challenge. Blacklight consists of three nodes with 8-16 TB of shared memory and up to 2,048 cores per node. If request these resources during registration, PSC will contact you to determine your software and computing needs and to set up your account on Blacklight.
 
 What kind of data sets will be provided?
-CAMI is providing simulated metagenome data sets created from published and unpublished (contributed) isolate genome sequences, with as much realism built in as we could manage. For instance, they will include multiple strains from the same species. 
+CAMI is providing simulated metagenome data sets created from more than 700 predominantly unpublished (contributed) isolate genome sequences, with as much realism built in as we could manage. For instance, they will include multiple strains from the same species. 
 
 Why are we providing new simulated data sets and not using existing public ones?
-For real metagenome samples, we do not know which read comes from which genome, and in our simulations, this should be the same way. All public simulated samples also have the correct solution also available, which would make the contest less realistic. Furthermore, we want to simulate different relevant scenarios that are used in metagenomics for which no simulated data sets exist.
+For real metagenome samples, we do not know which read comes from which genome, and in our simulations, this should be the same way. All public simulated samples also have the correct solution also available, which would make the contest less realistic. Furthermore, we want to simulate different relevant scenarios that are used in metagenomics for which no simulated data sets exist. The gold standards for these data sets will be provided after the contest has ended.
 
 How can I download data? 
 You have to do the following steps.
@@ -187,3 +184,6 @@ You are free to submit for one or multiple tasks, there is no need to submit res
 
 Do I have to submit my codes in any particular language?
 You can submit your codes / software in any language you like. It should be installed ready to execute in a docker container. The instructions how to install it we will make available soon. We will also offer help with this, if wanted, via Skype.
+
+What is the purpose of the google+-group? 
+We use it for video hangouts in planning the CAMI contest because we are working with people from around the world. We want to get your feedback and invite tool developers to interact with the CAMI team here in defining the CAMI contest already in the development phase. You do not have to join the group if you want to participate in the contest.
