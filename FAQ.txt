@@ -13,7 +13,7 @@ Is CAMI open and transparent?
 Yes! The development process is done in an open community. Everybody is invited to participate. People who intend to participate will not be involved in any part of the development process that provides any information or advantage for the actual competition.
 
 What about reproducibility?
-CAMI encourages participants to submit reproducible results by providing their software in docker containers. CAMI is working together with bioboxes to define formats for a standardized setup and execution of profiling, binning and assembly tools in docker containers. Submission of the executable software and reference data sets used to produce them within a docker container is encouraged in several ways (see below). This will make the results of these tools reproducible, and also facilitate a continuous monitoring of their performance on future test data sets. 
+CAMI encourages participants to submit reproducible results by providing their executable software in docker containers, along with submission of their predictions (see details below). CAMI has worked together with bioboxes to define formats for a standardized setup and execution of profiling, binning and assembly tools in docker containers. This will make the results of these tools reproducible, and also facilitate a continuous monitoring of their performance on future test data sets. 
 
 Where do I find the relevant information when I want to participate in the CAMI contest?
 You can find all information on the CAMI webpage, on the page entitled <a href="http://cami-challenge.org/participate">Contest participation</a>.
@@ -47,7 +47,7 @@ If I do not have access to sufficient compute time on my own, what are my option
 The Pittsburgh Supercomputing Center (PSC) is making compute time and storage available on their SGI UV1000 system, Blacklight to do genome assembly for the CAMI challenge. Blacklight consists of three nodes with 8-16 TB of shared memory and up to 2,048 cores per node. If request these resources during registration, PSC will contact you to determine your software and computing needs and to set up your account on Blacklight.
 
 What kind of data sets will be provided?
-We will provided simulated metagenome data sets created from published and unpublished (contributed) isolate genome sequences, with as much realism built in as we could manage. For instance, they will include multiple strains from the same species. 
+CAMI is providing simulated metagenome data sets created from published and unpublished (contributed) isolate genome sequences, with as much realism built in as we could manage. For instance, they will include multiple strains from the same species. 
 
 Why are we providing new simulated data sets and not using existing public ones?
 For real metagenome samples, we do not know which read comes from which genome, and in our simulations, this should be the same way. All public simulated samples also have the correct solution also available, which would make the contest less realistic. Furthermore, we want to simulate different relevant scenarios that are used in metagenomics for which no simulated data sets exist.
