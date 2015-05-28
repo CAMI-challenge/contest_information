@@ -130,7 +130,7 @@ usage: java -jar camiClient.jar [-af < assembly_file >] [-bf < binning_file extr
 
 Where do I get the fingerprint?
 You can get the fingerprint with our <a href="https://data.cami-challenge.org/camiClient.jar">cami client jar</a>. Run the cami client: java -jar camiClient.jar with the parameter -af for assembly files -bf for binning files or -pf for profiling files.
-Your files must be in a specific format, which is explained in the following questions.
+Your files must be in a specific format, which is explained in the following questions:
 <b>What is the format of the CAMI assembly file?</b>
 <b>What is the format of the CAMI binning file?</b>
 <b>What is the format of the CAMI profiling file?</b>
@@ -167,7 +167,7 @@ What is the format of the CAMI binning file?
 The CAMI format for binning is specified in our CAMI <a href="https://github.com/CAMI-challenge/contest_information/blob/master/file_formats/CAMI_B_specification.mkd">Github repository</a>. 
 
 What is the format of the CAMI profiling file? 
-The CAMI format for profiling is specified in our CAMI <a href="https://github.com/CAMI-challenge/contest_information/blob/master/file_formats/CAMI_P_specification.mkd">Github repository</a>. 
+The CAMI format for profiling is specified in our CAMI <a href="https://github.com/CAMI-challenge/contest_information/blob/master/file_formats/CAMI_TP_specification.mkd">Github repository</a>. 
 
 I cannot get the docker installation to work, what should I do?
 Please contact us, we are happy to help.
