@@ -13,7 +13,7 @@ This line is an optional commment line describing the file content.
 This line gives information about the format version.
 
        @SampleID:SAMPLEID
-SAMPLEID is a unique identifier for a sequence sample. Do not give a tool name or your name here, we want to process submissions anonymously. If you want to submit to a dataset just use the name as the sample id (e.g.:1st CAMI Challenge Dataset 2 CAMI_medium). If you want to submit to a specific sample just use the name of the sample (e.g.:CAMI_MED_S001).
+SAMPLEID is a unique identifier for a sequence sample. Do not give a tool name or your name here, we want to process submissions anonymously. If you want to submit results for a dataset, just refer to its name as the sample id (e.g.:1stCAMIChallenge_medium_GoldStandardAssembly). If you want to submit to a specific sample just use the name of the sample (e.g.:CAMI_MED_S001).
 
        @@SEQUENCEID	TAXID	BINID	
 The last line is always the header for the output section and begins with '@@'. It defines the content of the output columns in a tab-separated format. The tags are described in the output section below. 
