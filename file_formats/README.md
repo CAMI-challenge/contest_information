@@ -1,7 +1,7 @@
 # CAMI file formats
 
-* [Assembly output format](file_formats/CAMI_A_specification.mkd)
+* [Assembly output format](CAMI_A_specification.mkd)
 
-* [(Taxonomic) Binning output format](file_formats/CAMI_B_specification.mkd)
+* [(Taxonomic) Binning output format](CAMI_B_specification.mkd)
 
-* [Taxonomic profiling output format](file_formats/CAMI_TP_specification.mkd)
+* [Taxonomic profiling output format](CAMI_TP_specification.mkd)
